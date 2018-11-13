@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:duration="3000"
+    android:fillAfter="true"
+    android:fillBefore="false"
+    android:fromXDelta="0"
+    android:fromYDelta="0"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:repeatCount="-1"
+    android:repeatMode="reverse"
+    android:startOffset="100"
+    android:toXDelta="500"
+    android:toYDelta="300">
+<!--
+  android:duration：动画持续时长
+  android:fillAfter：动画结束之后是否保持动画的最终状态；true，表示保持动画的最终状态
+  android:fillBefore：动画结束之后是否保持动画开始前的状态；true，表示恢复到动画开始前的状态
+  android:fromXDelta：动画开始时，在X轴方向上的位置；取值类型有三种：数字；百分比；百分比+”p”;
+      数字：例如50.0，这里的单位是px像素
+      百分比：例如50%，这里是相对于自己控件宽度的百分比，实际的值是mIvImg.getWidth()*50%；
+      百分比+”p”：例如50%p，这里是表示相对于自己控件的父控件的百分比，
+  android:fromYDelta：动画开始时，在Y轴方向上的位置；取值类型同上
+  android:interpolator：动画插值器。是实现动画不规则运动的一种方式
+  android:repeatCount：动画重复的次数。指定动画重复播放的次数，如果你需要无限循环播放，请填写一个小于0的数值，我一般写-1
+  android:repeatMode：动画重复的Mode，有reverse和restart两种，效果看后面
+  android:startOffset：动画播放延迟时长，就是调用start之后延迟多少时间播放动画
+  android:toXDelta：动画移动在X轴的目标位置；取值类型和fromXDelta一样
+  android:toYDelta：动画移动在Y轴的目标位置；取值类型同上
+-->
+
+</translate>

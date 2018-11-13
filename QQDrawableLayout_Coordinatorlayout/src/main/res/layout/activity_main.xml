@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"-->
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--https://blog.csdn.net/zheng_jiao/article/details/52590281-->
+        <!-- android:fitsSystemWindows="true"-->
+        <!--AppBarLayout标题的容器，只能作为coordinatorlayout里面的第一个子View
+         AppBarLayout是一个容器，需要滚动的子view必须放到这个容器里面
+         android:fitsSystemWindows="true" 适应系统，是否把内容显示到状态栏
+         app:layout_scrollFlags="scroll"  决定子view能否滚出屏幕
+         -->
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:scaleType="centerCrop"
+                app:layout_scrollFlags="scroll">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/pic6" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/pic9" />
+                -->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/pic10" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toobar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@android:color/holo_blue_dark"
+                app:layout_scrollFlags="scroll" />
+            <!--这个带linearlayout布局里面改可以放置布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll"></LinearLayout>
+            <!--这个TextView 可以换成Table标签-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="小成功靠磨难，大成就靠灾难！" />
+
+        </android.support.design.widget.AppBarLayout>
+        <!--侧边-->
+
+
+        <!--主内容写在这里
+       必须是NestedScrollView或者是RecyclerView，其他控件不能滑动
+       因为他们都能配置layout_behavior这个属性
+       NestedScrollView和ScrollView使用方法一模一样
+       app:layout_behavior="@string/appbar_scrolling_view_behavior"
+       不写这个属性整个布局会占满屏幕；用来通知AppBarLayout界面内容发生了滚动事件，
+       不配置滚动的话上面内容会一下子滚上去
+       -->
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/text" />
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+    <!--侧边栏-->
+    <!--  android:clickable="true" 表示自己消费-->
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#0f0"
+        android:clickable="true"
+        android:orientation="vertical">
+        <!--  app:menu="@menu/nav_menu"-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_head"
+            app:menu="@menu/nav_menu">//添加的head
+        </android.support.design.widget.NavigationView>
+
+        <!--<include layout="@layout/drawerlayout_item"></include>-->
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
