@@ -32,6 +32,8 @@ public class MyFragment extends Fragment{
         super.onResume();
     }
 
+
+    /*这里获取Activity中的数据*/
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -42,7 +44,6 @@ public class MyFragment extends Fragment{
 
     private void init(View view) {
         ImageView img = view.findViewById(R.id.img);
-
         if(fp==1){
             img.setImageResource(R.mipmap.pic3);
         }else if (fp==2){
@@ -55,6 +56,6 @@ public class MyFragment extends Fragment{
             img.setImageResource(R.mipmap.pic10);
         }
 
-        Toast.makeText(getActivity(),"wawo...."+ fp,Toast.LENGTH_SHORT).show();
+
     }
 }
