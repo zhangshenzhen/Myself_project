@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG ="MainActivity.position" ;
     private Toolbar toolbar;
     public int fp = -1;
 
@@ -163,9 +165,31 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new MainAdapter(this.getSupportFragmentManager()));
         tab.setupWithViewPager(viewPager);
 
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+                Log.i(TAG,"Scrolled:= "+i);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Log.i(TAG,"Selected:= "+position);
+                if (position ==0){
+                    isShow = false;
+                }else {
+                    isShow = true;
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+                Log.i(TAG,"StateChanged:= "+i);
+            }
+        });
     }
 
-
+    boolean isShow;
     private class MainAdapter extends FragmentPagerAdapter {
 
         MainAdapter(FragmentManager fm) {
@@ -173,8 +197,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
+        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+            super.destroyItem(container, position, object);
+        }
+
+        @Override
         public Fragment getItem(int position) {
             fp = position;
+            Log.i(TAG,".........."+fp);
             return items.get(position).second;
         }
 
