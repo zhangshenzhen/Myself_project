@@ -76,8 +76,8 @@ public class SwipeLayout extends LinearLayout {
             @Override   //松手后根据侧滑位移确定菜单打开与否
             public void onViewReleased(View releasedChild, float xvel, float yvel){
 
-                if(isDrag){
-                 onScrollListener.onMoveScrollListener(SwipeLayout.this);
+                 if(isDrag){
+                  onScrollListener.onMoveScrollListener(SwipeLayout.this);
                   isDrag = false;
                 }
             }

@@ -20,6 +20,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //因编译报错添加的
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'publicsuffixes.gz'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
 
 }
 
@@ -33,4 +43,8 @@ dependencies {
     implementation files('libs/alipaySdk-20151112.jar')
     implementation files('libs/jackson-mapper-asl-1.9.10.jar')
     implementation files('libs/jackson-core-asl-1.9.10.jar')
+    implementation files('libs/okgo-3.0.4.jar')
+    implementation files('libs/okhttp-3.8.1.jar')
+    implementation files('libs/okio-1.13.0.jar')
+    implementation files('libs/xUtils-2.6.14.jar')
 }

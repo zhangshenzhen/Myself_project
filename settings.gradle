@@ -1,1 +1,1 @@
-include ':MyPopouWindow', ':zlayoutmanage', ':zlayout_manager', ':viewgroup_adapter', ':coordinatorlayout', ':QQDrawableLayout_Coordinatorlayout', ':qqslidingmenue', ':payfor', ':qqsliding', ':DragHelper', ':getadressbyjingweidu', ':QQBottomAnimation', ':OkHttp_GO'
+include ':MyPopouWindow', ':zlayout_manager', ':viewgroup_adapter', ':coordinatorlayout', ':QQDrawableLayout_Coordinatorlayout', ':qqslidingmenue', ':payfor', ':qqsliding', ':DragHelper', ':getadressbyjingweidu', ':QQBottomAnimation', ':OkHttp_GO', ':okgo-debug'
