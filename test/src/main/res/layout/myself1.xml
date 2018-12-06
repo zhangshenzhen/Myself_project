@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="10dp">
+
+    <RelativeLayout
+        android:id="@+id/relyout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@mipmap/youhui"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:id="@+id/line_onLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="共有" />
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="22"
+                android:textColor="#99ffff00" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="张优惠券可用" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

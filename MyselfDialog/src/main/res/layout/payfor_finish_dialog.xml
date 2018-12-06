@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/payfor_finish_dialog_bg">
+
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- <View
+             android:id="@+id/view1"
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="#52b890"></View>-->
+
+         <ImageView
+             android:id="@+id/img"
+             android:layout_centerInParent="true"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:scaleType="fitXY"
+             android:src="@mipmap/test"/>
+
+
+     </RelativeLayout>
+
+
+     <Button
+         android:id="@+id/btn_look_for"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_look_for"
+        android:layout_below="@+id/rel"
+        android:layout_width="125dp"
+        android:layout_marginTop="20dp"
+        android:text="查看优惠券"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:layout_height="35dp">
+
+     </Button>
+
+
+      <ImageView
+          android:id="@+id/dialog_close"
+          android:layout_marginTop="30dp"
+          android:src="@mipmap/youhui_close"
+          android:layout_centerHorizontal="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

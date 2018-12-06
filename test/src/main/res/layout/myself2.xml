@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="10dp">
+
+    <RelativeLayout
+        android:id="@+id/relyout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@mipmap/youhui2"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/tv_offLine"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看绑定线优惠券"
+             />
+
+    </RelativeLayout>
+
+</LinearLayout>
