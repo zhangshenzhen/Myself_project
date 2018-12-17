@@ -89,7 +89,7 @@ public class ThreadActivity extends Activity {
        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
    }*/
 
- 
+
     @Override
     protected void onDestroy(){
         super.onDestroy();
