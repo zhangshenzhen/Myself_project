@@ -2,11 +2,7 @@ package com.shenzhen.payfor;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-
-import com.shenzhen.payfor.utils.GetYouHuiListDialog;
-import com.shenzhen.payfor.utils.PayForFinishDialog;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      findViewById(R.id.btn_payfor).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_payfor).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -43,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
             });*/
 
            //测试二
-            PayForFinishDialog pay = new PayForFinishDialog(MainActivity.this);
+         //   PayForFinishDialog pay = new PayForFinishDialog(MainActivity.this);
           //  pay.showDialog();
 
             //可以弹出两个dialog;
-            PayForFinishDialog pay2 = new PayForFinishDialog(MainActivity.this);
-            pay2.showDialog();
+          //  PayForFinishDialog pay2 = new PayForFinishDialog(MainActivity.this);
+         //   pay2.showDialog();
           }
      });
    }

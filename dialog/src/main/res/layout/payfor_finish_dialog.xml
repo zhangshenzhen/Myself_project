@@ -43,28 +43,24 @@
                 android:text="张优惠券" />
         </LinearLayout>
     </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="center"
-        android:background="#ffffff">
+     <RelativeLayout
+         android:id="@+id/rel_recv_concent"
+          android:layout_width="match_parent"
+         android:layout_height="120dp"
+         android:background="#ffffff">
 
-       <!-- <android.support.v7.widget.RecyclerView
-            android:id="@+id/rec"
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
-        </android.support.v7.widget.RecyclerView>-->
+
 
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@mipmap/juan_bottom_bg">
-
     </LinearLayout>
 
       <Button
-
+          android:id="@+id/btn_look_for"
          android:layout_marginTop="20dp"
           android:layout_gravity="center_horizontal"
           android:layout_width="wrap_content"

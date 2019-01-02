@@ -42,7 +42,7 @@ public class UserAdapter2 extends BaseRecycleViewAdapter<UserPersonBean> {
 
         imageView.setBackgroundResource(R.drawable.ic_launcher);
         tv_name.setText(data.getName()+":"+data.getAge());
-       ll_all.setOnClickListener(new View.OnClickListener() {
+        ll_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(context,data.getName(),Toast.LENGTH_SHORT).show();
