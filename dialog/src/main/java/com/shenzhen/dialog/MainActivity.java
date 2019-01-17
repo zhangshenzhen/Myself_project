@@ -15,9 +15,12 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            PayForFinishDialog dialog = new PayForFinishDialog(MainActivity.this,5);
-            dialog.showDialog();
+
+              PayForFinishDialog dialog = new PayForFinishDialog(MainActivity.this, 5);
+              dialog.showDialog();
+
             }
         });
     }
+
 }

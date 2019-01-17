@@ -62,6 +62,7 @@ public class PayForFinishDialog {
         if (num>=3) {
             relativeLayout.height = DensityUtil.dip2px(context, 260);;
          }
+
         rel_recv_concent.setLayoutParams(relativeLayout);
         dialog_close.setOnClickListener(new View.OnClickListener() {
             @Override

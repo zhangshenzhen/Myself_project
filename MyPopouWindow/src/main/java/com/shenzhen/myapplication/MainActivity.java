@@ -24,7 +24,7 @@ import java.util.List;
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener,PopupWindow.OnDismissListener {
     private Button button1;//单个popupwindow点击按钮
 
-    private TextView button2;//下拉 popupwindow点击按钮
+    private TextView tv2;//下拉 popupwindow点击按钮
 
     private ListView listview;
 
@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button1=(Button) findViewById(R.id.button1);
-        button2=(TextView) findViewById(R.id.button2);
+        tv2=(TextView) findViewById(R.id.tv2);
         linear = findViewById(R.id.linear);
         linear.setClickable(true);//这个要添加；linear 取代子控件的点击事件
         tv = findViewById(R.id.tv);
@@ -53,7 +53,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         List<String> list =getList() ;
         adapter.setData(list);
         button1.setOnClickListener(new SubmitBtn1());
-        //button2的点击事件
+        //tv2的点击事件
          //  tv.setOnClickListener(new SubmitBtn2());
         //或选其一
         linear.setOnClickListener(new SubmitBtn2());
@@ -78,7 +78,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             }
         }
 
-    }
+    }//
 
     private void showPopupWindow(View view) {
 
@@ -116,7 +116,14 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         //相对于父控件的位置（例如正中央Gravity.CENTER，下方Gravity.BOTTOM等），可以设置偏移或无偏移
         popupWindow.showAtLocation(contentView, Gravity.CENTER, 0, 0);
     }
+
+
+
     //自定义一个popupwindow;
+
+   /*
+    附加参数说明
+    https://www.cnblogs.com/jzyhywxz/p/7039503.html */
     private void initTypePopup(int width) {
         typePopupWindow = new PopupWindow(listview, width,
                 ViewGroup.LayoutParams.WRAP_CONTENT, true);
@@ -142,6 +149,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         }
         return list;
     }
+
     @Override
     public void onDismiss() {
         isPopShow = false;
