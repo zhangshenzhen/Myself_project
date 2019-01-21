@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new Pair<String, Fragment>("第五个", new MyFragment()));
         items.add(new Pair<String, Fragment>("第六个", new MyFragment()));
 
+
         viewPager.setAdapter(new MainAdapter(this.getSupportFragmentManager()));
         tab.setupWithViewPager(viewPager);
 

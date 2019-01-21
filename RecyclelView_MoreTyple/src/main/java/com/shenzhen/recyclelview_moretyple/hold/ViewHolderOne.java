@@ -1,14 +1,15 @@
-package com.shenzhen.viewgroup_adapter.more_typle.holder;
+package com.shenzhen.recyclelview_moretyple.hold;
 
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.shenzhen.viewgroup_adapter.R;
-import com.shenzhen.viewgroup_adapter.more_typle.MyAdapter;
-import com.shenzhen.viewgroup_adapter.more_typle.base.BaseViewHolder;
-import com.shenzhen.viewgroup_adapter.more_typle.typlebean.Value1;
+import com.shenzhen.recyclelview_moretyple.R;
+import com.shenzhen.recyclelview_moretyple.TypleAdapter;
+import com.shenzhen.recyclelview_moretyple.base.BaseViewHolder;
+import com.shenzhen.recyclelview_moretyple.typlebean.Value1;
+
 
 public class ViewHolderOne extends BaseViewHolder<Value1> {
     public ViewHolderOne(@NonNull View itemView) {
@@ -16,7 +17,7 @@ public class ViewHolderOne extends BaseViewHolder<Value1> {
     }
 
     @Override
-    public void setUpView(final Value1 modle, int position, MyAdapter adpter) {
+    public void setUpView(final Value1 modle, int position, TypleAdapter adpter) {
         final TextView tv = (TextView) getView(R.id.tv);
         tv.setText(modle.getName());
         tv.setOnClickListener(new View.OnClickListener() {

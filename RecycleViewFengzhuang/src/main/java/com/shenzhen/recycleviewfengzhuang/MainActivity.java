@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,6 +25,22 @@ public class MainActivity extends AppCompatActivity implements BaseRecycleViewAd
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //String mattrt = "[A-Za-z].*[0-9]|[0-9].*[A-Za-z]{6,16}";  //不全是XXX
+
+
+        String mattrt = "(?=.*[0-9].*)(?=.*[A-Za-z].*).{6,16}";//至少包含数字和字母
+        String  s  = "123456abc_";
+
+        String mattrt2 = "(?=.*[0-9].*)(?=.*[._@].*).{6,16}";//至少包含数字或(._@)中一种
+        String  s2  = "123456abc._@！";
+
+
+        boolean  b = s.matches(mattrt);
+        boolean  b2 = s2.matches(mattrt2);
+
+        System.out.print("正则表达式结果 "+ b);
+
         list = new ArrayList<>();
 
         for (int i = 0; i < 180; i++) {
