@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 remoteService = null;
             }
         };
-
+    //
     protected void onDestroy() {
         super.onDestroy();
         unbindService(conn);

@@ -39,6 +39,7 @@ public interface HttpClientService {
      * */
     @GET("ws/get/virtualcount"+"?pkregister=" + "360e8ac8d5604593940271bfb8848612" + "&sourcepk=" + "047561f6bc7141eb8c9fff8626c18fb1") //url+参数
     Observable<HuiyuanbiBean> getHeros2();
+
     //方式一 3
     @GET  // 部分url+携带参数 传值
     Observable<HuiyuanbiBean> getHeros3(@Url String url);
