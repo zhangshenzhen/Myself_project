@@ -7,10 +7,20 @@
     <Button
         android:id="@+id/btn_Download"
         android:text="权限+下载"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn_upload"
+        android:text="权限+上传"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn_post"
+        android:text="权限+post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

@@ -9,7 +9,6 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.PermissionChecker;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +27,7 @@ import java.util.List;
    /*
    * 文件下载
    * */
-public class MainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback{
+public class DownloadActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback{
 
     private TextView download_text;
     private ProgressBar download_progess;
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                 intent.setAction("android.intent.action.VIEW");
                 intent.addCategory("android.intent.category.DEFAULT");
                 intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-                MainActivity.this.startActivity(intent);
+                DownloadActivity.this.startActivity(intent);
             }
 
             @Override

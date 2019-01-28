@@ -24,7 +24,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".DownloadActivity"/>
+        <activity android:name=".UpLoadActivity"/>
+        <activity android:name=".PostActivity"/>
+
     </application>
 
 </manifest>
