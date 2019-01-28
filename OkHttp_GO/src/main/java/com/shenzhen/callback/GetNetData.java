@@ -48,7 +48,7 @@ public class GetNetData {
             @Override
             public void onError(Response<String> response) {
                 super.onError(response);
-                callListener.onFailed(recode,response.body().toString());
+                callListener.onFailed(recode,response);
             }
         });;
         /*或者*/

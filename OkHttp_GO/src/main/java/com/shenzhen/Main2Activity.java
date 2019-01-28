@@ -18,7 +18,7 @@ import com.shenzhen.callback.GetNetData;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements CallListener{
+public class Main2Activity extends AppCompatActivity implements CallListener{
     private static final String TAG = "数据";
 
 
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements CallListener{
 
     @Override
     public void onFailed(int reqcode, Object result) {
-        Log.d(TAG, reqcode+ " get onFailed = " + result);
+        Log.d(TAG, reqcode+ " get onFailed = " + result.toString());
     }
 
 
