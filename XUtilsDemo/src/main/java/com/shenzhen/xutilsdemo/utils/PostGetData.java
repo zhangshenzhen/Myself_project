@@ -81,4 +81,36 @@ public class PostGetData {
             }
         });
     }
+    
+    public static void MethodGet2(final int requecode, String url, Map<String, String> map, final ResultDataListener listener) {
+
+        RequestParams params = new RequestParams(url);
+        //便利map集合
+        for (String key : map.keySet()) {
+            String value = map.get(key);
+            //设置入参
+            params.addParameter(key, value);
+        }
+        x.http().request(HttpMethod.GET,params, new Callback.CommonCallback<String>() {
+
+            public void onSuccess(String result) {
+                // Toast.makeText(x.app(), result, Toast.LENGTH_LONG).show();
+                Log.i("JAVA", "onSuccess result:" + result);
+                listener.onSuccess(requecode,result);
+            }
+            //请求异常后的回调方法
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                listener.onSuccess(requecode,ex.getMessage());
+            }
+            //主动调用取消请求的回调方法
+            @Override
+            public void onCancelled(CancelledException cex) {
+            }
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
 }

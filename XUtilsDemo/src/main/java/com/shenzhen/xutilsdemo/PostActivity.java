@@ -92,8 +92,9 @@ public class PostActivity extends AppCompatActivity implements ResultDataListene
         map.put("pkregister", "360e8ac8d5604593940271bfb8848612");
         map.put("sourcepk", "047561f6bc7141eb8c9fff8626c18fb1");
         PostGetData.MethodGet(120,url,map,this);
+        PostGetData.MethodGet2(120,url,map,this);
 
-
+        //封装前
         /* 拼接参数 或者入参
         * get 方式一*/
       /*  // String url =  "http://123.57.232.188:8080/hyb/ws/get/virtualcount" + "?pkregister=" + "360e8ac8d5604593940271bfb8848612" + "&sourcepk=" + "047561f6bc7141eb8c9fff8626c18fb1";
