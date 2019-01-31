@@ -27,6 +27,8 @@
         <activity android:name=".DownloadActivity"/>
         <activity android:name=".UpLoadActivity"/>
         <activity android:name=".PostActivity"/>
+        <activity android:name=".ImageActivity"/>
+        <activity android:name=".DbActivity"/>
 
     </application>
 

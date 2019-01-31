@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import com.shenzhen.xutilsdemo.inter_face.ResultDataListener;
 
+import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.http.HttpMethod;
 import org.xutils.http.RequestParams;
@@ -26,6 +27,8 @@ public class PostGetData {
             //设置入参
             params.addParameter(key, value);
         }
+        /*Callback.CommonCallback不带缓冲
+        * new Callback.CacheCallback 带缓冲*/
         x.http().request(HttpMethod.POST, params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -57,7 +60,7 @@ public class PostGetData {
         for (String key : map.keySet()) {
             String value = map.get(key);
             //设置入参
-            params.addParameter(key, value);
+            params.addBodyParameter(key, value);
         }
         x.http().get(params, new Callback.CommonCallback<String>() {
 
@@ -81,7 +84,7 @@ public class PostGetData {
             }
         });
     }
-    
+
     public static void MethodGet2(final int requecode, String url, Map<String, String> map, final ResultDataListener listener) {
 
         RequestParams params = new RequestParams(url);
@@ -89,7 +92,7 @@ public class PostGetData {
         for (String key : map.keySet()) {
             String value = map.get(key);
             //设置入参
-            params.addParameter(key, value);
+            params.addQueryStringParameter(key, value);
         }
         x.http().request(HttpMethod.GET,params, new Callback.CommonCallback<String>() {
 

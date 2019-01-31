@@ -87,15 +87,11 @@ public class DownloadActivity extends AppCompatActivity implements ActivityCompa
             public void onError(Throwable ex, boolean isOnCallback) {
                 Log.i(TAG, "IOException : " + ex.getMessage());
             }
-
             @Override
             public void onCancelled(CancelledException cex) {
-
             }
-
             @Override
             public void onFinished() {
-
             }
 
             @Override

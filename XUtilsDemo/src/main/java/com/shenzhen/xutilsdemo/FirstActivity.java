@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,14 +18,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FirstActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback{
+public class FirstActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
 
     private TextView download_text;
     private ProgressBar download_progess;
     private String TAG = "MainActivity数据";
     //1、首先声明一个数组permissions，将需要的权限都放在里面
     String[] permissions = new String[]{Manifest.permission.INTERNET,
-            Manifest.permission.CALL_PHONE,Manifest.permission.CAMERA,
+            Manifest.permission.CALL_PHONE, Manifest.permission.CAMERA,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE};
     private int typle;
@@ -37,11 +38,13 @@ public class FirstActivity extends AppCompatActivity implements ActivityCompat.O
         findViewById(R.id.btn_Download).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 checkAppPermission();
-                  typle = 1;
+                checkAppPermission();
+                typle = 1;
+                Log.i("当前时间",String.valueOf(System.currentTimeMillis()));
                 mothodClassTyple();
             }
         });
+
 
         findViewById(R.id.btn_upload).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,13 +61,31 @@ public class FirstActivity extends AppCompatActivity implements ActivityCompat.O
                 mothodClassTyple();
             }
         });
+
+
+        findViewById(R.id.btn_Image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                typle = 4;
+                mothodClassTyple();
+            }
+        });
+
+        findViewById(R.id.btn_Db).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                typle = 5;
+                mothodClassTyple();
+            }
+        });
+
     }
 
     private void mothodClassTyple() {
         if (Build.VERSION.SDK_INT >= 23) {
             checkAppPermission();
         } else {
-           startActivity(typle);
+            startActivity(typle);
         }
     }
 
@@ -121,17 +142,23 @@ public class FirstActivity extends AppCompatActivity implements ActivityCompat.O
     }
 
 
-    private void startActivity(int typle){
-        switch (typle){
+    private void startActivity(int typle) {
+        switch (typle) {
             case 1:
-                startActivity(new Intent(FirstActivity.this,DownloadActivity.class));
+                startActivity(new Intent(FirstActivity.this, DownloadActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(FirstActivity.this,UpLoadActivity.class));
+                startActivity(new Intent(FirstActivity.this, UpLoadActivity.class));
                 break;
             case 3:
-            startActivity(new Intent(FirstActivity.this,PostActivity.class));
-            break;
+                startActivity(new Intent(FirstActivity.this, PostActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(FirstActivity.this, ImageActivity.class));
+                break;
+            case 5:
+                startActivity(new Intent(FirstActivity.this, DbActivity.class));
+                break;
         }
 
     }

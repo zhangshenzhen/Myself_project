@@ -10,7 +10,13 @@
         android:onClick="upLoad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <Button
+        android:layout_marginTop="20dp"
+        android:text="上传"
+        android:id="@+id/btn_upload_json"
+        android:onClick="upLoad_Json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
      <ImageView
          android:id="@+id/img"
          android:layout_gravity="center_horizontal"
