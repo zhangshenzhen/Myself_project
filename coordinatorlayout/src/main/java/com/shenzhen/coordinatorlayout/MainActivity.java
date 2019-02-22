@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     private void init() {
-        tab = (TabLayout)findViewById(R.id.tab);
+         tab = (TabLayout)findViewById(R.id.tab);
          viewPager = findViewById(R.id.vpager);
         items = new ArrayList<>();
         items.add(new Pair<String, Fragment>("第一个", new MyFragment()));
