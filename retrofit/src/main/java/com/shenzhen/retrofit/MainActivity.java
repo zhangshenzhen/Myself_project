@@ -93,7 +93,7 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
                             }
 
                             @Override
-                            public void onError(Throwable e) {
+                            public void onError(Throwable e) { //请求失败时使用缓存中的数据
                                 if (lruJsonCache != null) {
                                     Log.v("ckjc", "getHeros() 内存缓存中的数据 " + lruJsonCache.getJsonFromMemCache("coupon_list"));
                                 } else {

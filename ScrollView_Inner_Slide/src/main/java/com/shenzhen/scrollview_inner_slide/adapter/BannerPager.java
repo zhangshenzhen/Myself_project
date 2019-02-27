@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.shenzhen.scrollview_inner_slide.R;
@@ -37,9 +38,10 @@ public class BannerPager extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        ImageView imageView = new ImageView(context);
+
          position  = position%viewpagerpicture.size();//否者会越界
-        Log.i("这是位置：","position :"+position);
+
+        ImageView imageView = new ImageView(context);
         imageView.setImageResource(viewpagerpicture.get(position));
         ((ViewPager) container).addView(imageView);
         return imageView;

@@ -23,7 +23,7 @@ public class MyFragment extends Fragment {
     private String TAG = "TAGD";
     private ImageView img;
     private MainActivity activity;
-    private int position;
+    private int position; //作为每个Fragment 对象中的 position
 
     public static MyFragment getInstance(int index) {
         MyFragment fragment = new MyFragment();
@@ -45,7 +45,7 @@ public class MyFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        init();
+       // init();
     }
 
     @Override

@@ -1,13 +1,19 @@
 package com.shenzhen.scrollview_inner_slide;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -23,21 +29,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Scroller;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.shenzhen.scrollview_inner_slide.adapter.BannerPager;
 import com.shenzhen.scrollview_inner_slide.adapter.FirstHorizatalAdapter;
 import com.shenzhen.scrollview_inner_slide.adapter.ListTestAdapter;
 import com.shenzhen.scrollview_inner_slide.fragment.MyFragment;
 import com.shenzhen.scrollview_inner_slide.holder.CustomSwipeRefreshLayout;
+import com.shenzhen.scrollview_inner_slide.utils.AppInfoUtil;
 import com.shenzhen.scrollview_inner_slide.utils.DensityUtil;
+import com.shenzhen.scrollview_inner_slide.utils.HotFix;
 import com.shenzhen.scrollview_inner_slide.view.FixedSpeedScroller;
+import com.shenzhen.scrollview_inner_slide.view.TestCaculate;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -72,6 +84,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout liner_indicate;
     private int pointDis;
     private ImageView img_blue_move;
+    private boolean isNoDta;
+    private int REQUEST_CODE = 100;
+    String[] permissions = new String[]{Manifest.permission.INTERNET,
+            Manifest.permission.CALL_PHONE, Manifest.permission.CAMERA,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +99,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();//控件
         initData();//数据
         initListener();//监听事件
+
+        if (Build.VERSION.SDK_INT >= 23) {
+            checkAppPermission();
+        }
+
+    }
+
+    /*//使用了热修复
+      //https://blog.csdn.net/hq942845204/article/details/81044158
+    * */
+    private void fix() {
+        try {
+            String dexPath = Environment.getExternalStorageDirectory() + "/classes2.dex"; //需要读取权限
+            HotFix.patch(this, dexPath, "com.shenzhen.scrollview_inner_slide.TestCaculate");
+            Toast.makeText(this, "修复成功", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "修复失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+    }
+
+
+    private void checkAppPermission() {
+        //2、创建一个mPermissionList，逐个判断哪些权限未授予，未授予的权限存储到mPerrrmissionList中
+        List<String> mPermissionList = new ArrayList<>();
+        mPermissionList.clear();//清空没有通过的权限
+        for (int i = 0; i < permissions.length; i++) {
+            if (ContextCompat.checkSelfPermission(this, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
+                mPermissionList.add(permissions[i]);//添加还未授予的权限 } }
+            }
+        }
+        //申请权限
+        if (mPermissionList.size() > 0) {
+            //有权限没有通过，需要申请
+            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE);
+        }
     }
 
 
@@ -194,8 +249,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          * ViewPager*/
         vp.setAdapter(new BannerPager(MainActivity.this, viewpagerpicture));
         vp.setCurrentItem(0);
-        //控制ViewPager 切换速度的
-       try {
+        //控制ViewPager 切换速度的 但是影响手动滑动速度
+      /* try {
             Field field = ViewPager.class.getDeclaredField("mScroller");
             field.setAccessible(true);
             FixedSpeedScroller scroller = new FixedSpeedScroller(vp.getContext(), new AccelerateInterpolator());
@@ -206,8 +261,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
-        }
+        }*/
 
+        try {  //不影响向手动滑动
+            Field scrollerField = ViewPager.class.getDeclaredField("mScroller");
+            scrollerField.setAccessible(true);
+            Field interpolator = ViewPager.class.getDeclaredField("sInterpolator");
+            interpolator.setAccessible(true);
+            Scroller scroller = new Scroller(this, (Interpolator) interpolator.get(null)) {
+                @Override
+                public void startScroll(int startX, int startY, int dx, int dy, int duration) {
+                    super.startScroll(startX, startY, dx, dy, duration * 10);    // 这里是关键，将duration变长或变短
+
+                }
+            };
+            scrollerField.set(vp, scroller);
+        } catch (NoSuchFieldException e) {
+            // Do nothing.
+        } catch (IllegalAccessException e) {
+            // Do nothing.
+        }
 
 
         timer = new Timer();
@@ -234,8 +307,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pb = view.findViewById(R.id.pb);
         listadapter = new ListTestAdapter(this, num);
         list_item.setAdapter(listadapter);
+        // view.setPadding(0, AppInfoUtil.getScreenHeight(MainActivity.this),AppInfoUtil.getScreenWidth(MainActivity.this),
+        //  AppInfoUtil.getScreenHeight(MainActivity.this)+view.getMeasuredHeight());
         list_item.addFooterView(view);
-
 
         //Viewpager+Fragment
         items = new ArrayList<>();
@@ -300,9 +374,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 if (scrollY == (nestscView.getChildAt(0).getMeasuredHeight() - nestscView.getMeasuredHeight())) { // 上拉刷新实现
                     Log.i(TAG, "上拉加载更多");
-                    tv_more.setVisibility(View.GONE);
-                    pb.setVisibility(View.VISIBLE);
-                    handler.sendEmptyMessageDelayed(1, 3000);
+                    tv_more.setEnabled(true);//
+                    fix();//测试热修复
+                    if (!isNoDta) {
+                        num += 10;//模拟数据
+                        tv_more.setVisibility(View.GONE);
+                        pb.setVisibility(View.VISIBLE);
+                        handler.sendEmptyMessageDelayed(1, 3000);
+                    }
+
+
                 }
 
             }
@@ -376,13 +457,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+             test(); //测试热修复的功能，与 下面其他代码无关
             switch (msg.what) {
                 case 1:
-                    num += 10;
-                    if (listadapter != null) {
-                        listadapter.updateCount(num);
+                    if (num <= 30) { //限制数据
+                        if (listadapter != null) {
+                            listadapter.updateCount(num);
+                            pb.setVisibility(View.GONE);
+                            tv_more.setVisibility(View.VISIBLE);
+                            isNoDta = false;//或许还有数据，有上拉加载的必要性
+
+                        }
+                    } else { //手动点击加载也应该禁止掉，设置不可点击了
                         pb.setVisibility(View.GONE);
                         tv_more.setVisibility(View.VISIBLE);
+                        tv_more.setText("没有更多数据了。。。");
+                        isNoDta = true;//没有数据，不要上拉加载了
+                        //点击事件也应禁止
+                        tv_more.setEnabled(false);
+
                     }
                     break;
                 case 2:
@@ -394,6 +487,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     };
+
+    private void test() {
+        TestCaculate testCaculate = new TestCaculate();
+        testCaculate.caculate(MainActivity.this);
+    }
 
 //    public void setListViewHeightBasedOnChildren(ListView listView) {
 //        // 获取ListView对应的Adapter
@@ -426,9 +524,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             super(fm);
         }
 
-        @Override
+        @Override //销毁数据
         public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
             super.destroyItem(container, position, object);
+            //不经过合同交易 而获取外部技术的手段
         }
 
         @Override
@@ -455,6 +554,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
         if (timer != null) {
             timer.cancel();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        boolean hasPermissionDismiss = false;
+        //有权限没有通过
+        if (REQUEST_CODE == requestCode) {
+            for (int i = 0; i < grantResults.length; i++) {
+                if (grantResults[i] == -1) {
+                    hasPermissionDismiss = true;
+                }
+
+            }
+        }
+        //如果有权限没有被允许
+        if (hasPermissionDismiss) {
+            Toast.makeText(this, "权限被拒绝", Toast.LENGTH_SHORT).show();
+            // showPermissionDialog();
+            //跳转到系统设置权限页面，或者直接关闭页面，不让他继续访问
         }
     }
 
