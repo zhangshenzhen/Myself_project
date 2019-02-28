@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/TvTitleStyle"
+        android:text="@string/aidl_pos_trans_query" />
+
+    <Button
+        android:id="@+id/btnBackward"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_backward" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvTitle"
+        android:background="@color/koolcolor_white"
+        android:padding="4dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_trans_query_lastest"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/aidl_pos_trans_query_lastest" />
+
+            <Button
+                android:id="@+id/btn_trans_query_specify"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/aidl_pos_trans_query_specify" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

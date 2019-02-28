@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FF03A9F4</color>
+    <color name="colorPrimaryDark">#ff0171c9</color>
+    <color name="colorAccent">#FF00E5FF</color>
+    <color name="colorControlNormal">#FF78909C</color>
+    <color name="colorControlActivated">#FF03A9F4</color>
+    <color name="colorSwitchThumbNormal">#FF78909C</color>
+    <color name="koolcolor_blue_light">#FF2096F3</color>
+    <color name="koolcolor_blue_dark">#FF2060F3</color>
+    <color name="koolcolor_white">#FFFFFFFF</color>
+    <color name="koolcolor_black">#FF000000</color>
+    <color name="koolcolor_gray">#FF7F7F7F</color>
+    <color name="review_green">#ff669900</color>
+    <color name="orange">#FFFFBB33</color>
+    <color name="gray">#FF7F7F7F</color>
+    <color name="black">#FF000000</color>
+    <color name="red">#FFFF4444</color>
+    <color name="interval_line_color">#FFD5D5D5</color>
+    <color name="list_view_header_text_color">#FF969698</color>
+
+    <!-- AIDL调用，仿收银通颜色 -->
+    <color name="kool_black">#333333</color>
+    <color name="kool_gray_D8">#D8D8D8</color>
+    <color name="kool_gray_9A">#9A9A9A</color>
+    <color name="kool_blue">#00AAF0</color>
+    <color name="kool_blue_light">#ADDDFF</color>
+    <color name="kool_bg_black">#37363C</color>
+    <color name="kool_red_light">#FFFF4444</color>
+    <color name="kool_green_light">#FF7AA621</color>
+
+    <!-- 命名方式变更 -->
+    <color name="gray_B0000000">#B0000000</color>
+    <color name="gray_A0000000">#A0000000</color>
+
+
+
+</resources>

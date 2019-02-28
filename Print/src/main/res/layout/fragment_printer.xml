@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/btnTest"
+        style="@style/HomePageBtnStyle"
+        android:layout_centerInParent="true"
+        android:text="@string/printer_start_print"
+        android:textColor="@color/koolcolor_white" />
+
+    <TextView
+        android:id="@+id/tvPrinterIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/btnTest"
+        android:layout_margin="@dimen/dimen_240_12dp"
+        android:gravity="center_vertical"
+        android:text="打印机序号" />
+
+    <TextView
+        android:id="@+id/tvPrintCount"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/tvPrinterIndex"
+        android:layout_margin="@dimen/dimen_240_12dp"
+        android:gravity="center_vertical"
+        android:text="打印份数" />
+
+    <Spinner
+        android:id="@+id/spinnerPrt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/btnTest"
+        android:layout_margin="@dimen/dimen_240_12dp"
+        android:layout_toRightOf="@id/tvPrinterIndex" />
+
+    <Spinner
+        android:id="@+id/spinnerPrtCount"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tvPrinterIndex"
+        android:layout_margin="@dimen/dimen_240_12dp"
+        android:layout_toRightOf="@id/tvPrinterIndex" />
+
+    <CheckBox
+        android:id="@+id/cbIsLabelPrinter"
+        android:layout_width="match_parent"
+        android:text="是否是标签打印机"
+        android:textColor="@color/black"
+        android:checked="false"
+        android:layout_below="@id/tvPrintCount"
+        android:layout_height="100dp"/>
+
+</RelativeLayout>

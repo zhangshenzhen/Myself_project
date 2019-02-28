@@ -1,0 +1,82 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="start_pay_btn_text_size">20px</dimen>
+    <dimen name="common_text_view_text_size">20px</dimen>
+
+    <!-- order details page -->
+    <dimen name="home_navigation_btn_text_size">22px</dimen>
+    <dimen name="order_details_content_text_size">22px</dimen>
+    <dimen name="order_details_button_text_size">28px</dimen>
+    <dimen name="order_details_coupon_text_size">20px</dimen>
+    <dimen name="order_details_content_item_height">42dp</dimen>
+    <dimen name="order_detail_interval_margin_right">100dp</dimen>
+    <dimen name="activity_setting_download_margin">128dp</dimen>
+    <dimen name="window_width">220dp</dimen>
+    <dimen name="window_height">220dp</dimen>
+    
+    <!-- 固定的小尺寸 -->
+    <dimen name="divider_line_width_1px">1px</dimen>
+    <dimen name="divider_line_width_2px">2px</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="introduce_tv_size">30sp</dimen>
+    <dimen name="title_tv_size">28sp</dimen>
+    <dimen name="middle_title_tv_size">24sp</dimen>
+    <dimen name="item_label_tv_size">22sp</dimen>
+    <dimen name="net_label_tv_size">20sp</dimen>
+    <dimen name="timezone_gmt_tv_size">18sp</dimen>
+    <dimen name="middle_content_tv_size">17sp</dimen>
+    <dimen name="logo_koolpos_url_tv_size">15sp</dimen>
+    <dimen name="logo_koolpos_tv_size">11sp</dimen>
+
+    <!-- View大小 -->
+    <dimen name="fragment_width">710dp</dimen>
+    <dimen name="titlebar_height">66dp</dimen>
+    <dimen name="wifi_dialog_width">386dp</dimen>
+
+    <!-- ListView item大小 -->
+    <dimen name="item_height">62dp</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="textsize_160_11sp">11sp</dimen>
+    <dimen name="textsize_160_15sp">15sp</dimen>
+    <dimen name="textsize_160_17sp">17sp</dimen>
+    <dimen name="textsize_160_18sp">18sp</dimen>
+    <dimen name="textsize_160_20sp">20sp</dimen>
+    <dimen name="textsize_160_22sp">22sp</dimen>
+    <dimen name="textsize_160_24sp">24sp</dimen>
+    <dimen name="textsize_160_28sp">28sp</dimen>
+    <dimen name="textsize_160_30sp">30sp</dimen>
+
+    <!-- 常用margin padding 尺寸 -->
+    <dimen name="dimen_240_8dp">6dp</dimen>
+    <dimen name="dimen_240_12dp">8dp</dimen>
+    <dimen name="dimen_240_16dp">10dp</dimen>
+    <dimen name="dimen_240_18dp">12dp</dimen>
+    <dimen name="dimen_240_24dp">16dp</dimen>
+    <dimen name="dimen_240_30dp">20dp</dimen>
+    <dimen name="dimen_240_32dp">22dp</dimen>
+    <dimen name="dimen_240_34dp">23dp</dimen>
+    <dimen name="dimen_240_36dp">24dp</dimen>
+    <dimen name="dimen_240_45dp">30dp</dimen>
+    <dimen name="dimen_240_48dp">32dp</dimen>
+    <dimen name="dimen_240_52dp">34dp</dimen>
+    <dimen name="dimen_240_54dp">36dp</dimen>
+    <dimen name="dimen_240_64dp">42dp</dimen>
+    <dimen name="dimen_240_72dp">48dp</dimen>
+    <dimen name="dimen_240_90dp">60dp</dimen>
+    <dimen name="dimen_240_100dp">66dp</dimen>
+    <dimen name="dimen_240_102dp">68dp</dimen>
+    <dimen name="dimen_240_108dp">72dp</dimen>
+    <dimen name="dimen_240_124dp">82dp</dimen>
+    <dimen name="dimen_240_132dp">88dp</dimen>
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="68dp"
+    android:padding="2dp" >
+
+    <ImageView
+        android:id="@+id/aidl_img_record_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/aidl_tv_record_ref_no"
+        style="@style/ItemTvStyle_14Sp"
+        android:layout_toRightOf="@id/aidl_img_record_icon" />
+
+    <TextView
+        android:id="@+id/aidl_tv_record_trans_amount"
+        style="@style/ItemTvStyle_14Sp"
+        android:textSize="17sp"
+        android:layout_alignParentRight="true"
+        android:paddingRight="16dp"
+        android:textStyle="bold"
+        android:textScaleX="0.8" />
+
+    <TextView
+        android:id="@+id/aidl_tv_record_currency_tag"
+        style="@style/ItemTvStyle_14Sp"
+        android:layout_toLeftOf="@id/aidl_tv_record_trans_amount"
+        android:text="@string/currency_cny" />
+
+    <TextView
+        android:id="@+id/aidl_tv_record_trans_time"
+        style="@style/ItemTvStyle_14Sp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/aidl_tv_record_ref_no"
+        android:layout_toRightOf="@id/aidl_img_record_icon" />
+
+    <TextView
+        android:id="@+id/aidl_tv_record_trans_status"
+        style="@style/ItemTvStyle_14Sp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/aidl_tv_record_trans_amount"
+        android:paddingRight="16dp"/>
+
+</RelativeLayout>

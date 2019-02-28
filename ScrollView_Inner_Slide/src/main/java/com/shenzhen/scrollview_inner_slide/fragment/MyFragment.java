@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.shenzhen.scrollview_inner_slide.MainActivity;
 import com.shenzhen.scrollview_inner_slide.R;
@@ -83,6 +84,14 @@ public class MyFragment extends Fragment {
             img.setImageResource(R.mipmap.pic2);
 
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "这是Viewpager第："+ position+" 位置Fragment", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
     }
 }

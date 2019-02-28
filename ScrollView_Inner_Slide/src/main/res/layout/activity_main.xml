@@ -29,8 +29,21 @@
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rev2"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"></android.support.v7.widget.RecyclerView>
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+                <!--使用自定义高度的GridView 否则只显示一行-->
+                <com.shenzhen.scrollview_inner_slide.view.InnerGridView
+                    android:id="@+id/Igv_GridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="7dp"
+                    android:horizontalSpacing="2dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="1dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -39,7 +52,7 @@
                     <com.shenzhen.scrollview_inner_slide.view.NoScollChildViewViewpager
                         android:id="@+id/vp"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"> </com.shenzhen.scrollview_inner_slide.view.NoScollChildViewViewpager>
+                        android:layout_height="150dp"> </com.shenzhen.scrollview_inner_slide.view.NoScollChildViewViewpager>
 
                     <LinearLayout
                         android:id="@+id/liner_indicate"

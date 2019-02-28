@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void bindService(View view){
         System.out.println("=====begin bindService");
        // Intent service = new Intent("android.intent.RemoveService");//自定义隐示意图
-        Intent service = new Intent(this,RemoveService.class);//自定义隐示意图
+        Intent service = new Intent(this,RemoveService.class);//显示意图
 
         //通过bindService绑定服务
         bindService(service,conn,BIND_AUTO_CREATE);

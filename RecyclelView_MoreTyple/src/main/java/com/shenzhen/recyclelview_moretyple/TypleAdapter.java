@@ -42,7 +42,6 @@ public class TypleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         mList.add(new Value2("南京"));
         mList.add(new Value3("32"));
 
-
     }
 
 

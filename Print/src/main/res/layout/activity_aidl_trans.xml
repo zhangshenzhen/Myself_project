@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/TvTitleStyle"
+        android:text="@string/aidl_pos_trans_unit" />
+
+    <Button
+        android:id="@+id/btnBackward"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_backward" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvTitle"
+        android:background="@color/koolcolor_white"
+        android:padding="4dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_pay"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/aidl_pos_sale" />
+
+            <Button
+                android:id="@+id/btn_bat_bsc_pay"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/aidl_pos_bat_bsc_pay" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/trans_info_void" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_status"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/koolcolor_white" >
+
+        <ScrollView
+            android:id="@+id/sv_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+        <ImageButton
+            android:id="@+id/imgBtn_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/icon_close" />
+
+        <Button
+            android:id="@+id/btn_cancel_swipe_card"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/imgBtn_close"
+            android:text="@string/cancel_swipe_card" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/koolcolor_white" >
+
+    <TextView
+        android:id="@+id/aidl_tv_title"
+        style="@style/TvStyle_20Sp.White"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/kool_black"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="@string/aidl_login_tips" />
+
+    <EditText
+        android:id="@+id/aidl_et_userId"
+        style="@style/EtLoginPagePad"
+        android:layout_centerInParent="true"
+        android:drawableLeft="@drawable/login_user"
+        android:hint="@string/aidl_login_hint_user"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/aidl_et_customId"
+        style="@style/EtLoginPagePad"
+        android:layout_above="@id/aidl_et_userId"
+        android:layout_centerHorizontal="true"
+        android:maxLength="15" 
+        android:drawableLeft="@drawable/login_customer"
+        android:hint="@string/aidl_login_hint_customer"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/aidl_et_psw"
+        style="@style/EtLoginPagePad"
+        android:layout_below="@id/aidl_et_userId"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/login_password"
+        android:hint="@string/aidl_login_hint_psw"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/aidl_btn_login"
+        style="@style/HomePageBtnStylePad"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/aidl_pos_user_login" />
+
+</RelativeLayout>

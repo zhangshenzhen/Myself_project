@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RadioGroup
+        android:id="@+id/aidl_rg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="#ffff00"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/aidl_radiobtn_home"
+            style="@style/RadioBtnStyle"
+            android:checked="true"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/aidl_radiobtn_record"
+            style="@style/RadioBtnStyle"
+            android:text="统计" />
+
+        <RadioButton
+            android:id="@+id/aidl_radiobtn_setting"
+            style="@style/RadioBtnStyle"
+            android:text="设置" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/aidl_fl_fuction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/aidl_rg_bottom" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/aidl_rl_trans_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/aidl_tv_trans_title"
+            style="@style/TvStyle_20Sp.White"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/kool_bg_black"
+            android:gravity="center"
+            android:text="@string/waiting_pay" />
+
+        <Button
+            android:id="@+id/aidl_btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_aidl_backward" />
+
+        <TextView
+            android:id="@+id/aidl_tv_trans_progress_amount"
+            style="@style/TvStyle_17Sp"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_below="@id/aidl_tv_trans_title"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:textColor="@android:color/holo_red_light" />
+
+        <TextView
+            android:id="@+id/aidl_tv_trans_progress_payment"
+            style="@style/TvStyle_17Sp"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_below="@id/aidl_tv_trans_title"
+            android:layout_toRightOf="@id/aidl_tv_trans_progress_amount"
+            android:gravity="center_vertical"
+            android:textColor="@color/koolcolor_gray" />
+
+        <ImageView
+            android:id="@+id/aidl_img_trans_progress"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_below="@id/aidl_tv_trans_progress_payment"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/aidl_tv_pinpad_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignTop="@id/aidl_img_trans_progress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:textColor="@color/kool_red_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/aidl_tv_trans_status"
+            style="@style/TvStyle_14Sp.Black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/aidl_img_trans_progress"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

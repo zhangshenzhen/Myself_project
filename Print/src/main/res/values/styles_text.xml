@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TextView 14sp -->
+    <style name="TvStyle_14Sp">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!-- 14Sp,白色 -->
+    <style name="TvStyle_14Sp.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!-- 14Sp,黑色 -->
+    <style name="TvStyle_14Sp.Black">
+        <item name="android:textColor">@color/kool_black</item>
+    </style>
+    
+    <!-- TextView 17sp -->
+    <style name="TvStyle_17Sp">
+        <item name="android:textSize">17sp</item>
+    </style>
+    <!-- 17Sp,白色 -->
+    <style name="TvStyle_17Sp.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!-- 17Sp,黑色 -->
+    <style name="TvStyle_17Sp.Black">
+        <item name="android:textColor">@color/kool_black</item>
+    </style>
+
+    <!-- TextView 20sp -->
+    <style name="TvStyle_20Sp">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!-- 20Sp,白色 -->
+    <style name="TvStyle_20Sp.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!-- 20Sp,黑色 -->
+    <style name="TvStyle_20Sp.Black">
+        <item name="android:textColor">@color/kool_black</item>
+    </style>
+    
+    <!-- 交易列表item文字属性(14sp 灰色) -->
+    <style name="ItemTvStyle_14Sp">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/koolcolor_gray</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style> 
+
+</resources>

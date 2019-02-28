@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp" >
+
+    <ImageView
+        android:id="@+id/item_img_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="8dp"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/item_tv_name"
+        style="@style/TvStyle_20Sp.Black"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/item_img_icon"
+        android:layout_toRightOf="@id/item_img_icon"
+        android:gravity="center_vertical"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/item_tv_acquid"
+        style="@style/TvStyle_14Sp.Black"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_below="@id/item_tv_name"
+        android:layout_toRightOf="@id/item_img_icon"
+        android:gravity="center_vertical"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/item_tv_paymentid"
+        style="@style/TvStyle_14Sp.Black"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_below="@id/item_tv_acquid"
+        android:layout_toRightOf="@id/item_img_icon"
+        android:gravity="center_vertical"
+        android:singleLine="true" />
+
+</RelativeLayout>

@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.shenzhen.scrollview_inner_slide.R;
 import com.shenzhen.scrollview_inner_slide.holder.ScViewHolder;
@@ -23,16 +24,23 @@ public class FirstHorizatalAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = View.inflate(viewGroup.getContext(), R.layout.item,null);
+        View view = View.inflate(viewGroup.getContext(), R.layout.gridview_item,null);
         ScViewHolder scViewHolder = new ScViewHolder(view);
         return scViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder,int position) {
            ScViewHolder scholder = (ScViewHolder) viewHolder;
-           scholder.imgv.setImageResource(R.mipmap.ic_launcher);
+           scholder.imgv.setImageResource(listdata.get(position));
            scholder.tv_num.setText(position+"");
+           scholder.imgv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // Toast.makeText(context, "这是Recycleview第："+ position+" 个条目", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override

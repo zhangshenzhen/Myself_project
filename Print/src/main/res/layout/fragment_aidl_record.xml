@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/koolcolor_white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/aidl_tv_record_title"
+        style="@style/TvStyle_20Sp.White"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/kool_black"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="@string/aidl_record" />
+
+    <ListView
+        android:id="@+id/aidl_list_trans_record"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp" >
+    </ListView>
+
+</LinearLayout>

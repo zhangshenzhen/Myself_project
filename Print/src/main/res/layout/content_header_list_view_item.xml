@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:gravity="center_vertical"
+    android:minHeight="120dp"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/ll_payment_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content"
+            android:text="支付活动名称："
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/paymentNameTextView"
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_acqu_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_payment_name"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content"
+            android:text="支付渠道编号(acquId)："
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/openBrhNoTextView"
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_payment_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_acqu_id"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content"
+            android:text="支付活动编号(paymentId)："
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/paymentIdTextView"
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_prdt_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_payment_id"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content"
+            android:text="支付活动类型编号(prdtNo)："
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/productNoTextView"
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_prdt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_prdt_no"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content"
+            android:text="支付活动类型名称(prdtTitle)："
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/productTitleTextView"
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_open_brh_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_prdt_title"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+
+        <TextView
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content"
+            android:text="支付机构名称(openBrhName)："
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/openBrhNameTextView"
+            style="@style/list_view_item_text_view_style"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startPayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/button_green_background"
+        android:padding="4dp"
+        android:text="@string/btn_start_pay_msg"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/start_pay_btn_text_size" />
+
+    <Button
+        android:id="@+id/startBalanceButton"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/button_green_background"
+        android:text="@string/btn_start_balance_msg"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/start_pay_btn_text_size"
+        android:visibility="gone" />
+
+</RelativeLayout>

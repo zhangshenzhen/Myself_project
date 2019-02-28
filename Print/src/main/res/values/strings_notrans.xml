@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="keyboard_key_0">0</string>
+    <string name="keyboard_key_1">1</string>
+    <string name="keyboard_key_2">2</string>
+    <string name="keyboard_key_3">3</string>
+    <string name="keyboard_key_4">4</string>
+    <string name="keyboard_key_5">5</string>
+    <string name="keyboard_key_6">6</string>
+    <string name="keyboard_key_7">7</string>
+    <string name="keyboard_key_8">8</string>
+    <string name="keyboard_key_9">9</string>
+    <string name="keyboard_key_00">00</string>
+    <string name="keyboard_key_dot">.</string>
+
+</resources>

@@ -19,8 +19,10 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -31,6 +33,8 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.AbsListView;
+import android.widget.GridView;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -42,6 +46,7 @@ import android.widget.Toast;
 
 import com.shenzhen.scrollview_inner_slide.adapter.BannerPager;
 import com.shenzhen.scrollview_inner_slide.adapter.FirstHorizatalAdapter;
+import com.shenzhen.scrollview_inner_slide.adapter.InnGridViewAdapter;
 import com.shenzhen.scrollview_inner_slide.adapter.ListTestAdapter;
 import com.shenzhen.scrollview_inner_slide.fragment.MyFragment;
 import com.shenzhen.scrollview_inner_slide.holder.CustomSwipeRefreshLayout;
@@ -50,6 +55,7 @@ import com.shenzhen.scrollview_inner_slide.utils.DensityUtil;
 import com.shenzhen.scrollview_inner_slide.utils.HotFix;
 import com.shenzhen.scrollview_inner_slide.view.FixedSpeedScroller;
 import com.shenzhen.scrollview_inner_slide.view.TestCaculate;
+import com.shenzhen.scrollview_inner_slide.view.TestbBug;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -91,6 +97,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE};
 
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            test(); //测试热修复的功能，与 下面其他代码无关
+            switch (msg.what) {
+                case 1:
+                    if (num <= 30) { //限制数据
+                        if (listadapter != null) {
+                            listadapter.updateCount(num);
+                            pb.setVisibility(View.GONE);
+                            tv_more.setVisibility(View.VISIBLE);
+                            isNoDta = false;//或许还有数据，有上拉加载的必要性
+
+                        }
+                    } else { //手动点击加载也应该禁止掉，设置不可点击了
+                        pb.setVisibility(View.GONE);
+                        tv_more.setVisibility(View.VISIBLE);
+                        tv_more.setText("没有更多数据了。。。");
+                        isNoDta = true;//没有数据，不要上拉加载了
+                        //点击事件也应禁止
+                        tv_more.setEnabled(false);
+
+                    }
+                    break;
+                case 2:
+                    isLoop = true;//防止是触摸Vpager 区域下拉刷新的
+                    swipe_layout.setRefreshing(false);
+                    swipe_layout.forbidenSlide(false); //恢复可以滑动
+                    break;
+
+            }
+        }
+    };
+    private GridView igv_innerGridView;
+    private List<Integer> girdViewList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void fix() {
         try {
             String dexPath = Environment.getExternalStorageDirectory() + "/classes2.dex"; //需要读取权限
-            HotFix.patch(this, dexPath, "com.shenzhen.scrollview_inner_slide.TestCaculate");
+            HotFix.patch(this, dexPath, "com.shenzhen.scrollview_inner_slide");
             Toast.makeText(this, "修复成功", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(this, "修复失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -161,6 +204,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         list_item = findViewById(R.id.list_View);
         // list_item.setNestedScrollingEnabled(false);
+
+        igv_innerGridView = findViewById(R.id.Igv_GridView);
 
     }
 
@@ -219,8 +264,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /*数据*/
     private void initData() {
         listpicture = new ArrayList<>();
-        for (int i = 0; i < 16; i++) {
-            listpicture.add(R.mipmap.ic_launcher);
+        for (int i = 0; i < 6; i++) {
+            listpicture.add(R.mipmap.pic6);
+            listpicture.add(R.mipmap.pic2);
+            listpicture.add(R.mipmap.pic4);
+            listpicture.add(R.mipmap.pic5);
         }
 
         //viewpager 添加数据
@@ -233,16 +281,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewpagerpicture.add(R.mipmap.pic8);
         indecateCount(liner_indicate);//指示器
 
-        /*横向*/
+        /*横向 单行*/
         LinearLayoutManager layout = new LinearLayoutManager(this);
         layout.setOrientation(LinearLayoutManager.HORIZONTAL);
-        rev2.setLayoutManager(layout);
+        //设置Manager 和横向 两行
+        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
+        rev2.setLayoutManager(manager);
         rev2.setAdapter(new FirstHorizatalAdapter(this, listpicture));
 
-        /*纵行*/
+        /*纵行 单列 */
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        rev1.setLayoutManager(layoutManager);
+        //设置Manager 和纵向 两行
+        StaggeredGridLayoutManager manager2 = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        rev1.setLayoutManager(manager2);
         rev1.setAdapter(new FirstHorizatalAdapter(this, listpicture));
 
         /*
@@ -311,6 +363,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //  AppInfoUtil.getScreenHeight(MainActivity.this)+view.getMeasuredHeight());
         list_item.addFooterView(view);
 
+        girdViewList = new ArrayList<>();
+        girdViewList.clear();
+        for (int i = 0; i <9 ; i++) {
+            girdViewList.add(R.mipmap.pic6);
+        }
+        InnGridViewAdapter gridViewAdapter = new InnGridViewAdapter(this,girdViewList);
+        igv_innerGridView.setAdapter(gridViewAdapter);
         //Viewpager+Fragment
         items = new ArrayList<>();
         items.add(new Pair<String, Fragment>("第一个", MyFragment.getInstance(0)));
@@ -453,44 +512,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-             test(); //测试热修复的功能，与 下面其他代码无关
-            switch (msg.what) {
-                case 1:
-                    if (num <= 30) { //限制数据
-                        if (listadapter != null) {
-                            listadapter.updateCount(num);
-                            pb.setVisibility(View.GONE);
-                            tv_more.setVisibility(View.VISIBLE);
-                            isNoDta = false;//或许还有数据，有上拉加载的必要性
 
-                        }
-                    } else { //手动点击加载也应该禁止掉，设置不可点击了
-                        pb.setVisibility(View.GONE);
-                        tv_more.setVisibility(View.VISIBLE);
-                        tv_more.setText("没有更多数据了。。。");
-                        isNoDta = true;//没有数据，不要上拉加载了
-                        //点击事件也应禁止
-                        tv_more.setEnabled(false);
-
-                    }
-                    break;
-                case 2:
-                    isLoop = true;//防止是触摸Vpager 区域下拉刷新的
-                    swipe_layout.setRefreshing(false);
-                    swipe_layout.forbidenSlide(false); //恢复可以滑动
-                    break;
-
-            }
-        }
-    };
 
     private void test() {
         TestCaculate testCaculate = new TestCaculate();
         testCaculate.caculate(MainActivity.this);
+
+        TestbBug  tbug = new TestbBug();
+        tbug.bug(this);
     }
 
 //    public void setListViewHeightBasedOnChildren(ListView listView) {

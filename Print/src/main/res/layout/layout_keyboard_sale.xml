@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table_num"
+    android:layout_width="match_parent"
+    android:layout_height="203dp"
+    android:layout_below="@+id/layout"
+    android:layout_marginBottom="3dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_marginTop="10dp"
+    android:background="#c8cbcc"
+    android:orientation="horizontal"
+    android:padding="0.5dp" >
+
+    <LinearLayout style="@style/layout_input_amount_style" >
+
+        <Button
+            android:id="@+id/key_1"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_1" />
+
+        <Button
+            android:id="@+id/key_4"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_4" />
+
+        <Button
+            android:id="@+id/key_7"
+            style="@style/btn_input_amount_style"
+            android:textStyle="bold"
+            android:text="@string/keyboard_key_7" />
+
+        <Button
+            android:id="@+id/key_0"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_0" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/layout_input_amount_style" >
+
+        <Button
+            android:id="@+id/key_2"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_2" />
+
+        <Button
+            android:id="@+id/key_5"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_5" />
+
+        <Button
+            android:id="@+id/key_8"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_8" />
+
+        <Button
+            android:id="@+id/key_00"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_00" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/layout_input_amount_style" >
+
+        <Button
+            android:id="@+id/key_3"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_3" />
+
+        <Button
+            android:id="@+id/key_6"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_6" />
+
+        <Button
+            android:id="@+id/key_9"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_9" />
+
+        <Button
+            android:id="@+id/key_dot"
+            style="@style/btn_input_amount_style"
+            android:text="@string/keyboard_key_dot" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/layout_input_amount_style" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/key_delete"
+                style="@style/btn_input_amount_style"
+                android:text="@string/keyboard_key_delete"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/key_clear"
+                style="@style/btn_input_amount_style"
+                android:text="@string/keyboard_key_clear"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/key_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="0.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_pos_blue"
+            android:text="@string/keyboard_key_confirm"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

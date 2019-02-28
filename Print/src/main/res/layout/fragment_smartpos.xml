@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/koolcolor_white" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/prerequisite_call_smartpos" />
+
+            <Button
+                android:id="@+id/btnGetLoginInfo"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/btn_request_login_info" />
+
+            <Button
+                android:id="@+id/btnGetMerchInfo"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/btn_request_merch_info" />
+
+            <Button
+                android:id="@+id/btnPay"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/start_pay_btn_str" />
+
+            <Button
+                android:id="@+id/btnPayWithOrderInfo"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/start_pay_order_btn_str" />
+
+            <Button
+                android:id="@+id/btnPayAppointed"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/btn_request_payment" />
+
+            <Button
+                android:id="@+id/btnSaleRefund"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/btn_sale_refund" />
+
+            <Button
+                android:id="@+id/btnQueryBalance"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/btn_get_balance" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_240_12dp"
+                android:background="@drawable/bg_btn_default"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/etTxn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_240_72dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:singleLine="true"
+                    android:maxLength="18"
+                    android:inputType="number"
+                    android:background="@color/koolcolor_white"
+                    android:hint="@string/et_print_txn" />
+
+                <Button
+                    android:id="@+id/btnPrintTxn"
+                    style="@style/BtnStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_240_72dp"
+                    android:text="@string/btn_print_txn"
+                    android:textSize="@dimen/middle_content_tv_size" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnMisPosSign"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/btn_mis_sign" />
+
+            <Button
+                android:id="@+id/btnMisPosSett"
+                style="@style/HomePageBtnStyle"
+                android:text="@string/btn_mis_settlement" />
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="21.0dip"
+                android:text="@string/msg_test_pay_common"
+                android:textSize="@dimen/common_text_view_text_size" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/listLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C0FFFFFF"
+        android:orientation="vertical" >
+
+        <include layout="@layout/content_header" />
+
+        <ListView
+            android:id="@+id/paymentInfoListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

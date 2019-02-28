@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/koolcolor_white" >
+
+    <TextView
+        android:id="@+id/aidl_tv_trans_result_title"
+        style="@style/TvStyle_20Sp.White"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/kool_black"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:text="@string/aidl_pos_trans_result" />
+
+    <Button
+        android:id="@+id/aidl_btn_trans_result_back"
+        android:layout_width="48dp"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_aidl_backward" />
+
+    <Button
+        android:id="@+id/aidl_btn_trans_result_void"
+        android:layout_width="wrap_content"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bg_aidl_btn_transparent_gray"
+        android:text="@string/sale_void"
+        android:textColor="@color/kool_blue"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/aidl_img_trans_result_icon"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/aidl_tv_trans_result_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aidl_img_trans_result_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/aidl_tv_trans_result_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aidl_tv_trans_result_state"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:padding="2dp"
+        android:textColor="@color/kool_black"
+        android:textSize="36sp" />
+
+    <LinearLayout
+        android:id="@+id/aidl_ll_trans_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aidl_tv_trans_result_amount"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_amount"
+            android:textColor="@color/koolcolor_gray"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/aidl_tv_trans_result_order_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/koolcolor_gray"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aidl_ll_trans_result"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/label_pay_info"
+            android:textColor="@color/koolcolor_gray"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/aidl_tv_trans_result_payment_name"
+            style="@style/TvStyle_20Sp.Black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="8dp" />
+
+        <TextView
+            android:id="@+id/aidl_tv_trans_result_payinfo_amount"
+            style="@style/TvStyle_20Sp.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/aidl_btn_trans_result_reprint"
+        style="@style/HomePageBtnStyle"
+        android:layout_alignParentBottom="true"
+        android:text="@string/aidl_reprint_sheet" />
+
+</RelativeLayout>

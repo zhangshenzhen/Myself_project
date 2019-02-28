@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kool_bg_black" >
+
+    <TextView
+        android:id="@+id/aidl_tv_title"
+        style="@style/TvStyle_20Sp.White"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize" />
+
+    <ImageButton
+        android:id="@+id/aidl_btn_scan_qr"
+        android:layout_width="wrap_content"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/home_scan" />
+
+    <include
+        android:id="@+id/aidl_layout_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignParentBottom="true"
+        layout="@layout/layout_keyboard_sale" />
+
+    <TextView
+        android:id="@+id/aidl_tv_trans_amount"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/aidl_layout_keyboard"
+        android:layout_below="@id/aidl_tv_title"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="42sp" />
+
+    <RelativeLayout
+        android:id="@+id/aidl_rl_payment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black"
+        android:visibility="visible" >
+
+        <ListView
+            android:id="@+id/aidl_lv_payment"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:divider="@color/kool_gray_D8"
+            android:dividerHeight="1dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/aidl_tv_list_title"
+            style="@style/TvStyle_14Sp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_above="@id/aidl_lv_payment"
+            android:layout_centerVertical="true"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:text="@string/select_payment"
+            android:textColor="@color/koolcolor_gray" />
+
+        <TextView
+            android:id="@+id/aidl_tv_list_trans_amount"
+            style="@style/TvStyle_17Sp"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_above="@id/aidl_lv_payment"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:paddingRight="8dp"
+            android:textColor="@android:color/holo_red_light" />
+
+        <View
+            android:id="@+id/aidl_home_empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/aidl_tv_list_title"
+            android:background="@android:color/black" />
+    </RelativeLayout>
+
+</RelativeLayout>

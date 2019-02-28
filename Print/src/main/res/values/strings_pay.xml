@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_tutorial_wizard">Tutorial Wizard</string>
+    <string name="title_form_wizard">Form Wizard</string>
+    <string name="hint_firstname">Firstname</string>
+    <string name="hint_lastname">Lastname</string>
+    <string name="sample_form_text">This example shows a form which is divided into multiple steps.
+        Hit Next or slide your finger to continue...</string>
+    <string name="sample_form_summary">WizarDroid Context enables sharing data among steps.
+        Summary of input:</string>
+    <string name="sample_form_text2">This is a demonstration of blocking the next step until an action is taken</string>
+    <string name="sample_form_checkbox">Check here to enable the next step</string>
+
+    <!-- list view title -->
+    <string name="payment_id_header_str">活动编号</string>
+    <string name="payment_name_header_str">活动名称</string>
+    <string name="product_title_header_str">产品名称</string>
+    <string name="product_no_header_str">产品编号</string>
+    <string name="openbrh_no_header_str">支付机构号</string>
+    <string name="openbrh_name_header_str">支付机构</string>
+    <string name="operate_header_str">操作</string>
+    <string name="start_pay_btn_str">普通支付 0.50元</string>
+    <string name="start_pay_order_btn_str">普通支付 (传订单号)</string>
+    <string name="btn_request_payment">指定通道支付</string>
+    <string name="msg_test_pay_common">Test to pay 0.50 RMB</string>
+    <string name="btn_start_pay_msg">支付</string>
+    <string name="btn_start_balance_msg">余额查询</string>
+    <string name="btn_request_merch_info">请求商户信息</string>
+    <string name="btn_request_login_info">请求登录信息</string>
+    <string name="btn_reverse_consumption">交易撤消</string>
+    <string name="btn_sale_refund">消费退货</string>
+    <string name="btn_get_balance">查询余额</string>
+    <string name="et_print_txn">请输入要打印交易的交易号(txnId)</string>
+    <string name="btn_print_txn">打印指定交易</string>
+    <string name="btn_mis_sign">外接misPos签到</string>
+    <string name="btn_mis_settlement">外接misPos批处理</string>
+    <string name="msg_do_consume_first">请先做交易再撤消!</string>
+    <string name="action_clear_msg">清除</string>
+    <string name="title_choose_products">选择购买商品</string>
+    <string name="title_choose_payment">选择支付方式</string>
+
+    <!-- product name -->
+    <string name="product_puding_milk_tea">布丁奶茶 ￥0.10</string>
+    <string name="product_strawberry_milk_tea">草莓奶茶 ￥0.10</string>
+    <string name="product_mango_milk_tea">芒果奶茶 ￥0.10</string>
+    <string name="product_apple_milk_tea">苹果奶茶 ￥0.10</string>
+    <string name="product_lemon_milk_tea">柠檬奶茶 ￥0.10</string>
+    <string name="product_water_lemon_milk_tea">西瓜奶茶 ￥0.10</string>
+
+    <!-- payment -->
+    <string name="payment_selection">支付方式</string>
+    <string name="payment_simple_pay">普通支付方式</string>
+    <string name="payment_pay_desc">-请求支付案例</string>
+    <string name="payment_query_desc">-请求查询案例</string>
+    <string name="payment_simple_asklogin_desc">-请求登录信息:点击从收银通获取登录人员的相关信息，前提是安装收银通并且收银通已登录状态。</string>
+    <string name="payment_simple_askshop_desc">-请求商户信息:点击从收银通获取商户相关信息，前提是安装收银通并且收银通已经绑定商户。</string>
+    <string name="payment_simple_re_desc">-交易撤销:点击跳转收银通撤销上一笔交易(先要进行一笔交易)，撤销交易时需要输入高级别账号。\n测试版收银通默认高级账号密码为：incharge/111111。</string>
+    <string name="payment_simple_pay_desc">-点击“普通支付”后自动切换到收银通，输入正确的“客户号”以及“用户名”、“密码”和“参数下载”后，第一步选择“交易类型”，如“消费”、“预授权”等，在该交易类型下，可选定不同的“支付方式”。</string>
+    <string name="payment_special_pay">指定支付方式</string>
+    <string name="payment_special_pay_desc">-点击“指定支付后”从收银通获取获取支付方式列表。点击下列相应活动编号行的“支付”或者“余额查询”后，自动切换到收银通。\n收银通签到成功后，直接跳转到指定的“支付机构”和“支付方式”进行支付。\n-余额查询:相关的支付机构支持则可以刷卡查询卡片余额。</string>
+    <string name="title_merchant_user">获取商户信息用户信息</string>
+    <string name="msg_get_user_info">获取用户信息</string>
+    <string name="msg_get_merch_info">获取商户信息</string>
+    <string name="msg_mark_merch_info">商户名:</string>
+    <string name="msg_mark_merch_id">商户ID:</string>
+    <string name="msg_mark_terminal_id">设备号:</string>
+    <string name="msg_mark_dialog_merch_title">通过AIDL获取商户信息</string>
+    <string name="msg_get_merchant_info_failure">获取商户信息失败</string>
+    <string name="msg_mark_operator">操作员:</string>
+    <string name="msg_mark_grade">等级:</string>
+    <string name="msg_mark_dialog_user_info">通过AIDL获取登录信息</string>
+    <string name="msg_superior_grade">主管</string>
+    <string name="msg_employee_grade">收银员</string>
+    <string name="msg_get_user_info_failure">获取登录信息失败(检查收收银通是否已经登录)</string>
+
+    <!-- activity_order_detail_controller.xml -->
+    <string name="order_detail_tv_transDate">交易时间</string>
+    <string name="order_detail_tv_transAmount">订单金额</string>
+    <string name="order_detail_operator">操作员</string>
+    <string name="order_detail_tv_transType">交易类型</string>
+    <string name="order_detail_btn_operation_text_refund">退货</string>
+    <string name="order_detail_btn_operation_text_print">重打银行小票</string>
+    <string name="order_detail_btn_operation_text_cancel">交易撤销</string>
+    <string name="order_detail_btn_operation_text_auth_complete">联机完成</string>
+    <string name="order_detail_btn_operation_text_auth_settlement">离线完成</string>
+    <string name="order_detail_btn_operation_text_confirm">确定</string>
+    <string name="order_detail_btn_operation_text_back">返回</string>
+    <string name="order_detail_btn_operation_text_btn_cancel">退出</string>
+    <string name="order_detail_btn_operation_cancel">取消</string>
+    <string name="order_detail_btn_operation_text_coupon">发券</string>
+    <string name="order_detail_btn_sent_text_coupon">已发券</string>
+    <string name="order_detail_tv_payType">支付方式</string>
+    <string name="order_detail_tv_ref_no">参考号</string>
+    <string name="order_detail_tv_bank_card">银行卡号/买家支付宝账户</string>
+    <string name="order_detail_tv_order_no">订单号</string>
+    <string name="order_detail_tv_orderStatus">支付状态</string>
+    <string name="order_detail_tv_authCode">授权码</string>
+    <string name="order_detail_reprint_str">重新打印</string>
+    <string name="order_detail_trans_status_confirm">查询</string>
+    <string name="title_order_details">交易详情</string>
+    <string name="shopping_cart_title">购物车</string>
+    <string name="shopping_cart_total">总计：￥</string>
+    <string name="order_detail_tran_type_consume">消费</string>
+    <string name="order_detail_tran_type_consume_cancel">消费撤销</string>
+    <string name="order_detail_tran_type_consume_refund">退货</string>
+    <string name="msg_do_consume_first_then_print">请先做交易再打印!</string>
+    <string name="msg_do_consume_first_then_cancel">请先做交易再撤销!</string>
+    <string name="order_detail_btn_operation_text_btn_exit">退出</string>
+    <string name="msg_payment_canceled">交易取消</string>
+    <string name="cancel">取消</string>
+    <string name="order_detail_btn_operation_text_btn_go_shopping">继续购物</string>
+    <string name="order_detail_tv_txnid_mark">酷云交易号</string>
+    <string name="order_detail_tv_issuer">发卡行/互联网机构名称</string>
+
+    <!-- printer -->
+    <string name="msg_print_shopping_title">XX购物中心</string>
+    <string name="msg_print_shopping_address">XX市XX路XX号</string>
+    <string name="msg_print_shopping_mark">保留本小票七日内作为退货凭证,一月内作为发票凭证。</string>
+    <string name="printer_product_item">商品名</string>
+    <string name="printer_product_count">数量</string>
+    <string name="printer_total_amount">总计：￥</string>
+    <string name="msg_print_erp_countdown">打印业务小票，避免打印机占用:</string>
+    <string name="msg_balance">余额查询</string>
+
+    <!-- balance -->
+    <string name="msg_exist_no_payments">请联系商酷运营人员配置交易活动</string>
+    <string name="msg_reboot_demo">请重启收银通调用案例</string>
+    <string name="msg_do_product_selected">请加商品到购物车</string>
+
+</resources>

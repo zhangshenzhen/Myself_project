@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal" >
+    
+    <TextView 
+        android:layout_width="0dp"
+        android:layout_weight="120"
+        android:id="@+id/paymentIdTextView"
+        style="@style/list_view_item_text_view_style"
+        />
+    <TextView 
+           android:layout_width="0dp"
+        android:layout_weight="150"
+        android:id="@+id/paymentNameTextView"
+        style="@style/list_view_item_text_view_style"
+        />
+    <TextView 
+           android:layout_width="0dp"
+        android:layout_weight="120"
+        android:id="@+id/productNoTextView"
+        style="@style/list_view_item_text_view_style"
+        />
+    <TextView 
+           android:layout_width="0dp"
+        android:layout_weight="120"
+        android:id="@+id/productTitleTextView"
+        style="@style/list_view_item_text_view_style"
+        />
+    <TextView 
+           android:layout_width="0dp"
+        android:layout_weight="150"
+        android:id="@+id/openBrhNoTextView"
+        style="@style/list_view_item_text_view_style"
+        />
+    <TextView 
+           android:layout_width="0dp"
+        android:layout_weight="150"
+        android:id="@+id/openBrhNameTextView"
+        style="@style/list_view_item_text_view_style"
+        />
+    
+    <Button
+           android:layout_width="0dp"
+		android:id="@+id/startPayButton"
+		android:layout_weight="100"
+		android:layout_height="40dp"
+		android:background="@drawable/button_green_background"
+		android:text="@string/btn_start_pay_msg"
+		android:textColor="@android:color/white"
+		android:textSize="@dimen/start_pay_btn_text_size"
+		android:layout_marginLeft="30dp" />
+    <Button
+           android:layout_width="0dp"
+        android:id="@+id/startBalanceButton"
+        android:layout_weight="100"
+        android:layout_height="40dp"
+        android:background="@drawable/button_green_background"
+        android:text="@string/btn_start_balance_msg"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/start_pay_btn_text_size"
+        android:layout_marginLeft="5dp" />
+
+</LinearLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:background="@android:color/white"  >
+
+    <TextView
+        android:id="@+id/tipTextView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" 
+        android:paddingLeft="30dp"
+        android:drawablePadding="29dp"
+        android:gravity="center_vertical"
+        android:textSize="28px"
+        android:background="#DDDDDD"
+        android:text="@string/update_title"
+        android:textColor="@color/black"/>
+    
+    <TextView
+        android:id="@+id/tip2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tipTextView"
+        android:layout_marginTop="32dp"
+        android:textSize="30px"
+        android:textColor="@color/gray" />
+    
+
+
+	<LinearLayout
+	    android:id="@+id/update_curr_version_layout"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/tip2TextView"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="25dp"
+	    android:orientation="horizontal"
+	    android:gravity="center" >
+	    
+	    <TextView
+	        android:id="@+id/update_curr_show_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="当前版本 ：" 
+	        android:textSize="24px"
+	        android:textColor="@color/gray"/>
+	    
+	    <TextView
+	        android:id="@+id/update_curr_value_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="24px"
+	        android:textColor="@color/gray"/>
+	    
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:id="@+id/update_new_version_layout"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/update_curr_version_layout"
+	    android:layout_centerHorizontal="true"
+	    android:orientation="horizontal"
+	    android:gravity="center" >
+	    
+	    <TextView
+	        android:id="@+id/update_new_show_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="最新版本 ：" 
+	        android:textSize="24px"
+	        android:textColor="@color/gray"/>
+	    
+	    <TextView
+	        android:id="@+id/update_new_value_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="24px"
+	        android:textColor="@color/gray"/>
+	    
+	</LinearLayout>
+    
+	<LinearLayout
+	    android:id="@+id/update_file_size_layout"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/update_new_version_layout"
+	    android:layout_centerHorizontal="true"
+	    android:orientation="horizontal"
+	    android:gravity="center" >
+	    
+	    <TextView
+	        android:id="@+id/update_size_show_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="文件大小 ：" 
+	        android:textSize="24px"
+	        android:textColor="@color/gray"/>
+	    
+	    <TextView
+	        android:id="@+id/update_size_value_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="24px"
+	        android:textColor="@color/gray"/>
+	    
+	</LinearLayout>
+	
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/update_file_size_layout" >
+        
+        <Button
+            android:id="@+id/peddindUpdateButton"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:text="@string/update_later_text"
+            style="@style/BtnStyle"
+            android:visibility="gone" />
+        
+        <Button
+            android:id="@+id/startUpdateButton"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:textSize="24px"
+            android:text="@string/update_now_text"
+            android:textColor="@android:color/white"
+            style="@style/BtnStyle" />
+        
+    </LinearLayout>
+ 
+
+</RelativeLayout>

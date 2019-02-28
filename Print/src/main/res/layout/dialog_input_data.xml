@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/koolcolor_white"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+
+    
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/koolcolor_blue_light" />
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_group1"
+        style="@style/DialogItemLayoutStyle" >
+
+        <TextView
+            android:id="@+id/tv_dialog_label1"
+            style="@style/DialogTvLabelStyle" />
+
+        <EditText
+            android:id="@+id/et_dialog_input1"
+            style="@style/DialogEtInputStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_group2"
+        style="@style/DialogItemLayoutStyle" >
+
+        <TextView
+            android:id="@+id/tv_dialog_label2"
+            style="@style/DialogTvLabelStyle" />
+
+        <EditText
+            android:id="@+id/et_dialog_input2"
+            style="@style/DialogEtInputStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_group3"
+        style="@style/DialogItemLayoutStyle" >
+
+        <TextView
+            android:id="@+id/tv_dialog_label3"
+            style="@style/DialogTvLabelStyle" />
+
+        <EditText
+            android:id="@+id/et_dialog_input3"
+            style="@style/DialogEtInputStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_group4"
+        style="@style/DialogItemLayoutStyle" >
+
+        <TextView
+            android:id="@+id/tv_dialog_label4"
+            style="@style/DialogTvLabelStyle" />
+
+        <EditText
+            android:id="@+id/et_dialog_input4"
+            style="@style/DialogEtInputStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_group5"
+        style="@style/DialogItemLayoutStyle" >
+
+        <TextView
+            android:id="@+id/tv_dialog_label5"
+            style="@style/DialogTvLabelStyle" />
+
+        <EditText
+            android:id="@+id/et_dialog_input5"
+            style="@style/DialogEtInputStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_group6"
+        style="@style/DialogItemLayoutStyle" >
+
+        <TextView
+            android:id="@+id/tv_dialog_label6"
+            style="@style/DialogTvLabelStyle" />
+
+        <EditText
+            android:id="@+id/et_dialog_input6"
+            style="@style/DialogEtInputStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@android:attr/buttonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_dialog_cancel"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_default"
+            android:text="@android:string/cancel"
+            android:textColor="@color/koolcolor_white" />
+
+        <Button
+            android:id="@+id/btn_dialog_commit"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_default"
+            android:text="@android:string/ok"
+            android:textColor="@color/koolcolor_white" />
+    </LinearLayout>
+
+</LinearLayout>

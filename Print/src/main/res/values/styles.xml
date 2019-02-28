@@ -1,0 +1,195 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <style name="Theme.AppTheme" parent="android:Theme.Holo.Light.NoActionBar"></style>
+
+    <style name="Theme_dialog2" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@anim/hold</item>
+        <item name="android:windowExitAnimation">@anim/fade</item>
+    </style>
+
+    <style name="BtnStyle">
+        <item name="android:background">@drawable/bg_btn_default</item>
+        <item name="android:textColor">@color/koolcolor_white</item>
+    </style>
+
+    <style name="HomePageBtnStyle" parent="@style/BtnStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_240_72dp</item>
+        <item name="android:textSize">@dimen/middle_content_tv_size</item>
+        <item name="android:layout_margin">@dimen/dimen_240_12dp</item>
+    </style>
+
+    <style name="HomePageBtnStylePad" parent="@style/BtnStyle">
+        <item name="android:layout_width">400dp</item>
+        <item name="android:layout_height">@dimen/dimen_240_72dp</item>
+        <item name="android:textSize">@dimen/middle_content_tv_size</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="TipTextViewStyle">
+        <item name="android:textColor">@color/koolcolor_gray</item>
+        <item name="android:textSize">@dimen/dimen_240_12dp</item>
+    </style>
+
+    <style name="PritetLabelStyle">
+        <item name="android:textColor">@color/koolcolor_black</item>
+        <item name="android:background">@color/koolcolor_white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TvTitleStyle">
+        <item name="android:background">@color/koolcolor_blue_light</item>
+        <item name="android:textColor">@color/koolcolor_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">@dimen/dimen_240_72dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="list_view_header_title_style">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">10px</item>
+        <item name="android:textColor">@color/list_view_header_text_color</item>
+    </style>
+
+    <style name="list_view_item_text_view_style">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/list_view_item_text_color</item>
+    </style>
+
+    <style name="btn_request_style">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">200dp</item>
+    </style>
+
+    <!-- AIDL input dialog -->
+    <style name="DialogItemLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@color/gray</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="DialogTvLabelStyle">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/koolcolor_white</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="DialogEtInputStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@color/koolcolor_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+
+    <!-- 数字键盘Style -->
+    <style name="layout_input_amount_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="btn_input_amount_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">0.5dp</item>
+        <item name="android:textColor">@color/kool_black</item>
+        <item name="android:background">@drawable/bg_btn_white_gray</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- 底部RadioButton标签按钮Style -->
+    <style name="RadioBtnStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bg_radiobtn_white_gray</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/kool_blue</item>
+    </style>
+
+    <!-- 左侧RadioButton标签按钮Style（PAD版） -->
+    <style name="RadioBtnStylePad">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bg_radiobtn_white_gray</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/kool_blue</item>
+    </style>
+
+    <!-- AIDL完整调用示例_交易详情页item属性_RelativeLayout -->
+    <style name="RlItemInDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@color/kool_gray_D8</item>
+        <item name="android:paddingLeft">0.5dp</item>
+        <item name="android:paddingRight">0.5dp</item>
+        <item name="android:paddingTop">0.5dp</item>
+    </style>
+    <!-- AIDL完整调用示例_交易详情页item属性_TextView_lable -->
+    <style name="TvLabelInDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/koolcolor_white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/kool_gray_9A</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <!-- AIDL完整调用示例_交易详情页item属性_TextView_value -->
+    <style name="TvValueInDetail">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/koolcolor_white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textColor">@color/kool_gray_9A</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <style name="my_countdown_dialog_style" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

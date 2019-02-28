@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvScanTitle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/koolcolor_blue_light"
+        android:gravity="center"
+        android:text="@string/aidl_pos_bat_bsc_pay"
+        android:textColor="@color/koolcolor_white"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btnBackward"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_backward" />
+
+    <FrameLayout
+        android:id="@+id/scan_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvScanTitle" >
+
+        <fragment
+            android:id="@+id/fragmentScan"
+            android:name="com.koolpos.mobiledevdemo.fragment.ScanQrCodeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.koolpos.mobiledevdemo.fragment.ScanQrCodeFragment" />
+    </FrameLayout>
+
+</RelativeLayout>

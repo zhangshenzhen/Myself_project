@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="0dp"
+    android:id="@+id/listViewHeaderLayout"
+    android:layout_width="fill_parent"
+    android:background="@drawable/list_view_title_background"
+    android:layout_marginTop="40dp"
+    android:orientation="horizontal"
+    >
+	<TextView 
+	    android:layout_width="0dp"
+        android:layout_weight="120"
+        style="@style/list_view_header_title_style"
+        android:text="@string/payment_id_header_str"
+        /> 
+    <TextView 
+          android:layout_width="0dp"
+        android:layout_weight="150"
+        style="@style/list_view_header_title_style"
+        android:text="@string/payment_name_header_str"
+        />
+    
+     <TextView 
+           android:layout_width="0dp"
+        android:layout_weight="120"
+        style="@style/list_view_header_title_style"
+        android:text="@string/product_no_header_str"
+        />
+	<TextView 
+          android:layout_width="0dp"
+        android:layout_weight="120"
+        style="@style/list_view_header_title_style"
+        android:text="@string/product_title_header_str"
+        />
+    
+    <TextView 
+          android:layout_width="0dp"
+        android:layout_weight="150"
+        style="@style/list_view_header_title_style"
+        android:text="@string/openbrh_no_header_str"
+        />
+    <TextView 
+          android:layout_width="0dp"
+        android:layout_weight="150"
+        style="@style/list_view_header_title_style"
+        android:text="@string/openbrh_name_header_str"
+        />
+    <TextView 
+          android:layout_width="0dp"
+        android:layout_weight="150"
+        style="@style/list_view_header_title_style"
+        android:text="@string/operate_header_str"
+        />
+    
+</LinearLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PayDemo</string>
+    <string name="exit">退出</string>
+    <string name="call_smartpos">调用收银通</string>
+    <string name="call_smartpos_aidl">无界面调用收银通</string>
+    <string name="call_membercard_aidl">调用会员卡</string>
+    <string name="call_printer">调用打印机</string>
+    <string name="scan_qrcode">扫描二维码</string>
+    <string name="check_update">检测更新</string>
+    <string name="found_new_version">发现新版本</string>
+    <string name="please_download_update">请立即下载更新</string>
+    <string name="pedding_update">稍后更新</string>
+    <string name="update_title">软件更新</string>
+    <string name="update_new_text">检查到新版本 ，是否升级？</string>
+    <string name="update_later_text">稍后升级</string>
+    <string name="update_now_text">立即升级</string>
+    <string name="logoImg">logo</string>
+    <string name="get_login_info">请求登录信息</string>
+    <string name="get_login_info_failure">请求登录信息失败</string>
+    <string name="get_merch_info">请求商户信息 </string>
+    <string name="get_merch_info_failure">请求商户信息失败</string>
+    <string name="str_user">操作员:</string>
+    <string name="str_user_level">等级:</string>
+    <string name="str_director">主管</string>
+    <string name="str_cashier">收银员</string>
+    <string name="prerequisite_call_smartpos">注意：调用收银通相关接口之前，请确保已安装并登录收银通</string>
+    <string name="null_fragment">null</string>
+    <string name="shadow">shadow</string>
+    <string name="scan_line">scan_line</string>
+    <string name="begin_scan">开始扫描</string>
+    <string name="quit_scan">停止扫描</string>
+    <string name="printer_start_print">开始打印</string>
+    <string name="str_confirm_string">确定</string>
+    <string name="str_cancel_string">取消</string>
+    <string name="qrcode_result_string">二维码信息</string>
+    <string name="str_check_update_self">检测更新（本应用）</string>
+    <string name="str_check_update_pos">检测更新（收银通）</string>
+    <string name="str_check_update_engine">检测更新（支付驱动）</string>
+    <string name="str_is_latest_version">已经是最新版本</string>
+    <string name="str_update_tip">更新信息</string>
+    <string name="str_goto_appstore">进入应用中心查看</string>
+    <string name="misecureservice_is_null">mISecureService is null</string>
+    <string name="str_merch_id">商户ID:</string>
+    <string name="str_merch_name">商户名:</string>
+    <string name="str_terminal_id">设备号:</string>
+    <string name="mimerchservice_is_null">mIMerchService is null</string>
+    <string name="str_latest_version">最新版本：</string>
+    <string name="str_apk_size">安装包大小：</string>
+    <string name="str_mb_cap">MB</string>
+    <string name="str_state_disconnect">断开</string>
+    <string name="str_state_connected">连接</string>
+    <string name="str_pay_result">支付结果</string>
+    <string name="str_call_result">调用结果</string>
+    <string name="str_reverse_result">撤销结果</string>
+    <string name="str_refund_result">退货结果</string>
+    <string name="is_loading">加载中</string>
+
+    <!-- POS驱动安装提醒 -->
+    <string name="pos_engine_prompt">提示</string>
+    <string name="pos_engine_check">检测到设备未安装“支付服务”\n请至应用中心下载并安装</string>
+    <string name="pos_engine_unfounded">应用中心未找到“支付服务”\n1、请检查网络连接是否正常；\n2、打开应用中心，检查能否正常使用；\n3、仍未解决，请联系服务商。</string>
+    <string name="pos_engine_no_network">网络未连接，请检查网络后重新打开应用</string>
+
+    <!-- AIDL 调用收银通 -->
+    <string name="aidl_pos_user_unit">用户模块</string>
+    <string name="aidl_pos_trans_unit">交易模块</string>
+    <string name="aidl_pos_trans_query">交易查询模块</string>
+    <string name="aidl_pos_print_slip">签购单打印模块</string>
+
+    <!-- AIDL 调用收银通**用户模块 -->
+    <string name="aidl_pos_user_login">登录</string>
+    <string name="aidl_pos_user_loginWithUI">有界面登录</string>
+    <string name="aidl_pos_user_logout">注销</string>
+    <string name="aidl_pos_user_status_query">查看登录状态</string>
+    <string name="aidl_pos_user_login_info">查看登录信息</string>
+    <string name="aidl_pos_user_paylist">获取支付列表</string>
+    <string name="aidl_pos_user_paylist_icon">获取支付活动图标</string>
+
+    <!-- AIDL 调用收银通**交易模块 -->
+    <string name="aidl_pos_bankcard_pay">银行卡消费</string>
+    <string name="aidl_pos_sale">消费</string>
+    <string name="aidl_pos_bat_bsc_pay">BAT-BSC消费案例</string>
+    <string name="aidl_pos_bat_csb_pay">BAT-CSB消费案例</string>
+    <string name="aidl_pos_nocard_sale_void">BAT、现金消费撤销案例</string>
+    <string name="aidl_pos_bankcard_sale_void">银行卡消费撤销案例</string>
+
+    <!-- AIDL 调用收银通**交易查询模块 -->
+    <string name="aidl_pos_trans_query_day">当日所有交易</string>
+    <string name="aidl_pos_trans_query_lastest">末笔交易查询</string>
+    <string name="aidl_pos_trans_query_specify">交易详情查询</string>
+    <string name="aidl_pos_trans_query_detail">交易详情</string>
+
+    <!-- AIDL 调用会员卡 -->
+    <string name="aidl_member_card_start">打开刷卡磁头</string>
+    <string name="aidl_member_card_stop">关闭刷卡磁头</string>
+
+    <!-- AIDL 交易详情页 -->
+    <string name="trans_info_amount">交易金额</string>
+    <string name="trans_info_operator">操作员</string>
+    <string name="trans_info_payment_type">支付方式</string>
+    <string name="trans_info_refNo">参考号</string>
+    <string name="trans_info_ordNo">订单号</string>
+    <string name="trans_info_time">交易时间</string>
+    <string name="trans_info_void">撤销交易</string>
+
+    <!-- AIDL 调用其它模块 -->
+    <string name="aidl_pos_printLast">打印末笔交易</string>
+    <string name="aidl_pos_print">打印指定交易</string>
+    <string name="cancel_swipe_card">终止刷卡</string>
+
+    <!-- ===================================================================== -->
+
+
+    <!-- 键盘上的文字（不包含数字） -->
+    <string name="keyboard_key_clear">清空</string>
+    <string name="keyboard_key_delete">删除</string>
+    <string name="keyboard_key_confirm">确定</string>
+
+    <!-- AIDL调用，完整调用演示部分 -->
+    <string name="aidl_login_tips">登录收银系统</string>
+    <string name="aidl_login_hint_customer">请输入15位客户号</string>
+    <string name="aidl_login_hint_user">请输入操作员账号</string>
+    <string name="aidl_login_hint_psw">请输入密码</string>
+    <string name="error_tips_customerId">请输入完整的15位客户号</string>
+    <string name="error_tips_userId">请输入操作员账号</string>
+    <string name="error_tips_psw">请输入登录密码</string>
+    <string name="error_tips_login">登录异常，请稍候重试</string>
+    <string name="select_payment">选择支付方式</string>
+    <string name="waiting_pay">收款</string>
+    <string name="aidl_pos_trans_result">交易结果</string>
+    <string name="label_pay_info">付款信息</string>
+    <string name="order_amount">订单金额：</string>
+    <string name="sale_void">撤销</string>
+    <string name="aidl_setting">设置</string>
+    <string name="aidl_record">交易记录</string>
+    <string name="update_payment_list">更新支付配置</string>
+    <string name="trans_detail">交易详情</string>
+    <string name="aidl_reprint_sheet">补打小票</string>
+    <string name="aidl_query_order">查询</string>
+
+    <!-- AIDL调用交易类型文字 -->
+    <string name="trans_type_1011">预授权</string>
+    <string name="trans_type_1021">消费</string>
+    <string name="trans_type_1031">预授权完成</string>
+    <string name="trans_type_1041">余额查询</string>
+    <string name="trans_type_1721">超级转账</string>
+    <string name="trans_type_3011">预授权撤销</string>
+    <string name="trans_type_3021">消费撤销</string>
+    <string name="trans_type_3031">预授权完成撤销</string>
+    <string name="trans_type_3051">退货</string>
+    <string name="trans_type_4000">冲正</string>
+    <string name="trans_type_8011">签到</string>
+    <string name="trans_type_8021">签退</string>
+
+    <!-- AIDL调用订单状态文字 -->
+    <string name="trans_status_0">成功</string>
+    <string name="trans_status_1">失败</string>
+    <string name="trans_status_2">已冲正 </string>
+    <string name="trans_status_3">已撤销</string>
+    <string name="trans_status_4">已完成</string>
+    <string name="trans_status_5">未知状态</string>
+    <string name="trans_status_6">撤销中</string>
+    <string name="trans_status_9">超时</string>
+    <string name="currency_cny">"CNY  "</string>
+
+</resources>
