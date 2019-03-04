@@ -18,13 +18,13 @@ public class ViewHolderTwo extends BaseViewHolder<Value2> {
 
     @Override
     public void setUpView(final Value2 modle, int position, TypleAdapter adpter) {
-    /*    final TextView tv = (TextView) getView(R.id.tv);
+       final TextView tv = (TextView) getView(R.id.tv);
         tv.setText(modle.getAdress());
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(tv.getContext(), modle.getAdress(), Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
     }
 }

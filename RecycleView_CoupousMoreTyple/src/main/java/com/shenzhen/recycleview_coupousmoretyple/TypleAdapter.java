@@ -53,6 +53,7 @@ public class TypleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                     dataBeans.setCoupon_label(object.optString("coupon_label")+"");
                     dataBeans.setCoupon_title(object.optString("coupon_title")+"");
                     mresultDataBean.add(dataBeans);
+                    mresultDataBean.add(dataBeans);
                 } else { //类型 二
                     ResultDataBean2 dataBeans2 = new ResultDataBean2();
                     dataBeans2.setPayamount(object.optString("payamount")+"");
@@ -60,6 +61,7 @@ public class TypleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                     dataBeans2.setLabel(object.optString("label"+""));
                     dataBeans2.setCoupon_label(object.optString("coupon_label")+"");
                     dataBeans2.setCoupon_title(object.optString("coupon_title")+"");
+                    mresultDataBean.add(dataBeans2);
                     mresultDataBean.add(dataBeans2);
                 }
                // Log.i(TAG, "解析.. " + dataBeans.toString());
@@ -90,7 +92,7 @@ public class TypleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder baseViewHolder, int position) {
-        baseViewHolder.setUpView(mresultDataBean.get(position), position, this);
+        baseViewHolder.setUpView(mContext,mresultDataBean.get(position), position, this);
     }
 
     @Override

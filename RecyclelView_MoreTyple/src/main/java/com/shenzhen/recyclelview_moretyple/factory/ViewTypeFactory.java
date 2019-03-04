@@ -13,10 +13,10 @@ import com.shenzhen.recyclelview_moretyple.typlebean.Value2;
 import com.shenzhen.recyclelview_moretyple.typlebean.Value3;
 
 public class ViewTypeFactory implements BaseViewTypleFactory {
-/*    private final int oneId = R.layout.typle1;
-    private final int twoId = R.layout.typle2;*/
-    private final int oneId = R.layout.item_suit;
-    private final int twoId = R.layout.item_common;
+    private final int oneId = R.layout.typle1;
+    private final int twoId = R.layout.typle2;
+   /* private final int oneId = R.layout.item_suit;
+    private final int twoId = R.layout.item_common;*/
     private final int threeId = R.layout.typle3;
 
     @Override

@@ -1,5 +1,6 @@
 package com.shenzhen.recycleview_coupousmoretyple.hold;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.TextView;
@@ -18,9 +19,9 @@ public class ViewHolderTwo extends BaseViewHolder<ResultDataBean2> {
     }
 
     @Override
-     public void setUpView(final ResultDataBean2 modle, int position, TypleAdapter adpter) {
-      final TextView tv = (TextView) getView(R.id.tv_lable2);
-        tv.setText(modle.getCoupon_label()+"");
+     public void setUpView(Context context,final ResultDataBean2 modle, int position, TypleAdapter adpter) {
+      final TextView tv = (TextView) getView(R.id.tv_title2);
+        tv.setText(modle.getCoupon_title()+"");
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,6 +9,10 @@ import android.widget.Toast;
 
 import com.shenzhen.recycleview_coupousmoretyple.bean.ResultDataBean;
 import com.shenzhen.recycleview_coupousmoretyple.bean.ResultDataBean2;
+import com.shenzhen.recycleview_coupousmoretyple.utils.DensityUtil;
+import com.shenzhen.recycleview_coupousmoretyple.utils.GridSpacingItemDecoration;
+import com.shenzhen.recycleview_coupousmoretyple.utils.HorizontalSpaceItemDecoration;
+import com.shenzhen.recycleview_coupousmoretyple.utils.RecyclerViewSpacesItemDecoration;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,13 +23,14 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String TAG = "优惠券数据";
-    private List  mresultDataBean;
+    private List mresultDataBean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
         mresultDataBean = new ArrayList<>();
 
         recyclerView = findViewById(R.id.rcv);
+        //设置间距 方式一
+//        HashMap<String, Integer> stringIntegerHashMap = new HashMap<>();
+//        stringIntegerHashMap.put(RecyclerViewSpacesItemDecoration.TOP_DECORATION, 10);//top间距
+//        recyclerView.addItemDecoration(new RecyclerViewSpacesItemDecoration(stringIntegerHashMap));
+
+        //设置间距 方式一
+        GridSpacingItemDecoration gridSpacingItemDecoration = new GridSpacingItemDecoration(1, DensityUtil.dip2px(this, 5));//5
+        recyclerView.addItemDecoration(gridSpacingItemDecoration);
+
         //设置布局管理器
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -54,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         x.http().request(HttpMethod.POST, params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Toast.makeText(x.app(), result, Toast.LENGTH_LONG).show();
+                //Toast.makeText(x.app(), result, Toast.LENGTH_LONG).show();
                 JsonData(result.toString());
             }
 
@@ -74,6 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void JsonData(String result) {
 
-        recyclerView.setAdapter(new TypleAdapter(this,result));
+        recyclerView.setAdapter(new TypleAdapter(this, result));
     }
 }

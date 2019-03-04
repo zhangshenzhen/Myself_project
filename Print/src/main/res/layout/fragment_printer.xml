@@ -7,7 +7,7 @@
         android:id="@+id/btnTest"
         style="@style/HomePageBtnStyle"
         android:layout_centerInParent="true"
-        android:text="@string/printer_start_print"
+        android:text="开始打印"
         android:textColor="@color/koolcolor_white" />
 
     <TextView

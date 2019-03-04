@@ -1,5 +1,6 @@
 package com.shenzhen.recycleview_coupousmoretyple.base;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
@@ -26,6 +27,6 @@ public abstract class BaseViewHolder <T>extends RecyclerView.ViewHolder {
         }
         return view;
     }
-    public abstract void setUpView(T modle,int position ,TypleAdapter adpter);
+    public abstract void setUpView(Context context,T modle, int position , TypleAdapter adpter);
 
 }
