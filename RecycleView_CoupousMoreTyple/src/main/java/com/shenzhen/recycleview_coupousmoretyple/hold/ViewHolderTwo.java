@@ -20,7 +20,8 @@ public class ViewHolderTwo extends BaseViewHolder<ResultDataBean2> {
 
     @Override
      public void setUpView(Context context,final ResultDataBean2 modle, int position, TypleAdapter adpter) {
-      final TextView tv = (TextView) getView(R.id.tv_title2);
+        final TextView tv = (TextView) getView(R.id.tv_title2);
+        // int a =   1/0;
         tv.setText(modle.getCoupon_title()+"");
         tv.setOnClickListener(new View.OnClickListener() {
             @Override

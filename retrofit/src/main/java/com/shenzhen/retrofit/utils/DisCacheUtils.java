@@ -22,7 +22,7 @@ public class DisCacheUtils {
     private static StringBuilder sb;
 
     /* @pramr
-    key 作为文件名
+     key 作为文件名
       json 作为存储的文件内容
      *
      * */
@@ -33,7 +33,7 @@ public class DisCacheUtils {
         if (mCache.exists()) {
             mCache.delete();
         }
-         FileOutputStream fos = new FileOutputStream(mCache);//创建指定文件;
+         FileOutputStream fos = new FileOutputStream(mCache,false);//创建指定文件; false 代表每次重新写入数据
       try {
             //创建文件写入流
             fos.write(json.getBytes("gbk"));
