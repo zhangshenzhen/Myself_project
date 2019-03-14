@@ -13,16 +13,14 @@ import android.view.ViewGroup;
 
 
 public class BaseFragment extends Fragment {
-	protected ProgressDialog pDialog;
+
 	protected MyApp myApp;
 	protected FragmentManager fm;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		pDialog = new ProgressDialog(getActivity());
-		pDialog.setMessage("loading");
-		pDialog.setCancelable(false);
+
 		
 		myApp = (MyApp) getActivity().getApplication();
 		fm = getActivity().getFragmentManager();

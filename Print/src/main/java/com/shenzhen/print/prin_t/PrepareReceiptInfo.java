@@ -96,19 +96,19 @@ public class PrepareReceiptInfo {
                 cmdBuilder.append((char) 29);
                 cmdBuilder.append((char) 33);
                 cmdBuilder.append((char) 17);
-                cmdBuilder.append("购物小票");
+             //   cmdBuilder.append("购物小票");
                 cmdBuilder.append((char) 29);
                 cmdBuilder.append((char) 33);
                 cmdBuilder.append((char) 0);
                 addTextJson(array, FONT_DEFAULT, cmdBuilder.toString(), PrinterManager.CONTENT_ALIGN_CENTER);
             }else {
-                addTextJson(array, FONT_BIG, "购物小票", PrinterManager.CONTENT_ALIGN_CENTER);
+              //  addTextJson(array, FONT_BIG, "购物小票", PrinterManager.CONTENT_ALIGN_CENTER);
             }
             
             
             addTextJson(array, FONT_DEFAULT, "用户联", PrinterManager.CONTENT_ALIGN_LEFT);
             addDashLine(array);
-            addTextJson(array, FONT_DEFAULT, "商户名：测试商户demo", PrinterManager.CONTENT_ALIGN_LEFT);
+         /*  addTextJson(array, FONT_DEFAULT, "商户名：测试商户demo", PrinterManager.CONTENT_ALIGN_LEFT);
             addTextJson(array, FONT_DEFAULT, "商户号：1234567890", PrinterManager.CONTENT_ALIGN_LEFT);
             addTextJson(array, FONT_DEFAULT, "终端号：111111", PrinterManager.CONTENT_ALIGN_LEFT);
             addTextJson(array, FONT_DEFAULT, "流水号：12345678", PrinterManager.CONTENT_ALIGN_LEFT);
@@ -116,17 +116,17 @@ public class PrepareReceiptInfo {
             addTextJson(array, FONT_DEFAULT, "交易类型：消费", PrinterManager.CONTENT_ALIGN_LEFT);
             addTextJson(array, FONT_DEFAULT, "交易时间：2016-03-16 10:40:58", PrinterManager.CONTENT_ALIGN_LEFT);
             addDashLine(array);
-            addMultiTextJson(array, FONT_BIG, "金额：", "¥555"); // P8000不支持
+           addMultiTextJson(array, FONT_BIG, "金额：", "¥555"); // P8000不支持
             addTextJson(array, FONT_BIG, "金额：555.00元", PrinterManager.CONTENT_ALIGN_LEFT);
             addBarCode(array, "6921734976512", PrinterManager.CONTENT_ALIGN_CENTER);
             addQrCode(array, "A123123T", PrinterManager.CONTENT_ALIGN_CENTER);
             addBitmapJson(array, BitmapFactory.decodeResource(context.getResources(), R.drawable.qrcode),
-                    PrinterManager.CONTENT_ALIGN_CENTER);
+                    PrinterManager.CONTENT_ALIGN_CENTER);*/
+           /* addBlankLine(array);
             addBlankLine(array);
             addBlankLine(array);
             addBlankLine(array);
-            addBlankLine(array);
-            addBlankLine(array);
+            addBlankLine(array);*/
         }
         JSONObject jsonObject = new JSONObject();
         try {

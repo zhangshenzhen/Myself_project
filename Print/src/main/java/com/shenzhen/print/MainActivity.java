@@ -3,20 +3,23 @@ package com.shenzhen.print;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import cn.koolcloud.engine.service.aidl.IPrinterService;
+
 public class MainActivity extends FragmentActivity {
 
-    private PrinterFragment fragment;
+    private PrinterFragment2 fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragment = new PrinterFragment();
+        fragment = new PrinterFragment2();
         addLayoutFragment(R.id.frm, fragment, false);
     }
 
@@ -29,5 +32,12 @@ public class MainActivity extends FragmentActivity {
             ft.addToBackStack(null);
         }
         ft.commitAllowingStateLoss();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SingletonPrint.unRigiest();
     }
 }
