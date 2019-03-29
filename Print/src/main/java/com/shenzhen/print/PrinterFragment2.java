@@ -1,16 +1,10 @@
 package com.shenzhen.print;
 
-import android.app.ProgressDialog;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
 import android.os.Message;
-import android.os.Parcelable;
-import android.os.RemoteException;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,14 +18,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.shenzhen.print.adapter.PrinterIndexAdapter;
+import com.shenzhen.print.base.BaseFragment;
 import com.shenzhen.print.koolpos.mobiledevdemo.DeviceModel;
 import com.shenzhen.print.prin_t.PrepareReceiptInfo;
-import com.shenzhen.print.utils.AndroidUtils;
 
-import cn.koolcloud.engine.service.aidl.IPrintCallback;
 import cn.koolcloud.engine.service.aidl.IPrinterService;
 import cn.koolcloud.engine.service.aidlbean.ApmpRequest;
-import cn.koolcloud.engine.service.aidlbean.IMessage;
 
 public class PrinterFragment2 extends BaseFragment implements SingletonPrint.Change {
 

@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 public class TestbBug {
 
-   public  String st;
+   public  String st = "";
 
     public void bug(Context context) { //测试热修复功能
         boolean b = st.equals("st");

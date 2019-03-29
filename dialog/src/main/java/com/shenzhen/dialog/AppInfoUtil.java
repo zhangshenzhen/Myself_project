@@ -1,4 +1,4 @@
-package com.shenzhen.payfor.utils;
+package com.shenzhen.dialog;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

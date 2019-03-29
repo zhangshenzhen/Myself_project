@@ -5,10 +5,10 @@
         android:id="@+id/fl_inner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="12dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp"
-        android:paddingTop="12dp" >
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
 
         <FrameLayout
             android:layout_width="wrap_content"

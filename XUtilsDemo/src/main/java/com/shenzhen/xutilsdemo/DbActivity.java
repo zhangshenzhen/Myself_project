@@ -26,14 +26,14 @@ public class DbActivity  extends AppCompatActivity{
 
     public void createDB(View view){
         //用集合向Person表中插入多条数据
-        ArrayList<Person> person = new ArrayList<>();
-        person.add(new Person("张三"));
-        person.add(new Person("李四"));
-        person.add(new Person("赵六"));
+        ArrayList<Person> personList = new ArrayList<>();
+        personList.add(new Person("张三"));
+        personList.add(new Person("李四"));
+        personList.add(new Person("赵六"));
 
         //db.save()方法不仅可以插入单个对象，还能插入集合
         try {
-            DaoConfig.getDb().save(person);
+            DaoConfig.getDb().save(personList);
         } catch (DbException e) {
             e.printStackTrace();
         }

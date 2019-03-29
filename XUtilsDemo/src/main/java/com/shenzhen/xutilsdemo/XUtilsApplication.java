@@ -4,6 +4,7 @@ import android.app.Application;
 
 import org.xutils.x;
 
+
 public class XUtilsApplication extends Application {
 
     @Override
@@ -11,5 +12,6 @@ public class XUtilsApplication extends Application {
         super.onCreate();
         x.Ext.init(this);
         x.Ext.setDebug(true); //是否输出debug日志，开启debug会影响性能。
+
     }
 }

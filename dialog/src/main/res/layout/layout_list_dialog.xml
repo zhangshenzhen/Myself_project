@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+    android:id="@+id/tv_title"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="@string/app_name"
+    android:background="#3399FF"
+    android:textColor="#FFFFFF"
+    android:gravity="center"/> <EditText
+    android:layout_width="match_parent"
+    android:layout_height="40dp" />
+
+    <!--关键在于将ListView高度定死，虽然这样写适配效果很差，但是目前没有想到更好的办法了-->
+    <ListView
+      android:id="@+id/lv"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+</LinearLayout>

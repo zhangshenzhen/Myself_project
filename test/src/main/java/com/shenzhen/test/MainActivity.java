@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private int currentItem;
     private int Layouts[] = {R.layout.myself1, R.layout.myself2};
     private List<View> view_list = new ArrayList<>();
-     boolean isSliding = false;
+    boolean isSliding = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,24 +44,26 @@ public class MainActivity extends AppCompatActivity {
         viewpagr = findViewById(R.id.viewpagr);
         viewpagr.setAdapter(new ViewPaperAdapter(this, mImageIds));
         currentItem = 0;
-       // nextItem();
+        // nextItem();
         // viewpagr.setCurrentItem(currentItem);
 
-         ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
-         executor.scheduleWithFixedDelay(runtask, 3000, 3000, TimeUnit.MILLISECONDS);
-         viewpagr.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
+        executor.scheduleWithFixedDelay(runtask, 3000, 3000, TimeUnit.MILLISECONDS);
+        viewpagr.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
             }
+
             @Override
             public void onPageSelected(int i) {
-                Log.i("TAG","当前页面Selected : "+i);
+                Log.i("TAG", "当前页面Selected : " + i);
                 currentItem = i; //一定要写
             }
+
             @Override
             public void onPageScrollStateChanged(int i) {
-               // currentItem++;
-                Log.i("TAG","当前页面StateChanged : "+i);
+                // currentItem++;
+                Log.i("TAG", "当前页面StateChanged : " + i);
             }
         });
 
@@ -74,12 +77,12 @@ public class MainActivity extends AppCompatActivity {
                         isLoop = false;
                         break;
                     case MotionEvent.ACTION_UP:
-                         Toast.makeText(MainActivity.this, "Up", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Up", Toast.LENGTH_SHORT).show();
                         isLoop = true;
 
                         break;
                 }
-                return  isSliding ; //是否可以左右滑动
+                return isSliding; //是否可以左右滑动
             }
         });
 
@@ -89,9 +92,9 @@ public class MainActivity extends AppCompatActivity {
     Runnable runtask = new Runnable() {
         @Override
         public void run() {
-           if(isLoop &&isScoll){
-             handler.sendEmptyMessage(1);
-           }
+            if (isLoop && isScoll) {
+                handler.sendEmptyMessage(1);
+            }
         }
     };
     private boolean isScoll = true;
@@ -101,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-              if (isLoop &&isScoll) {
-                 nextItem();
-              }
+            if (isLoop && isScoll) {
+                nextItem();
+            }
 
         }
 
@@ -113,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     private void nextItem() {
         currentItem++;
         viewpagr.setCurrentItem(currentItem);
-        System.out.println("这是什么额原因 = "+currentItem);
+        System.out.println("这是什么额原因 = " + currentItem);
     }
 
 
@@ -152,10 +155,13 @@ public class MainActivity extends AppCompatActivity {
          */
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-             container.removeView((View) object);
+            container.removeView((View) object);
 
         }
 
+        /*组织结构是组织中划分、组合、和协调人们的活动和任务的一种正式的框架、表现为组织各部门的排列顺序、
+        空间位置、聚集状态、联系方式和相互联系。
+        * */
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
              /* ImageView image = new ImageView(mContext);
@@ -168,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
             int currentposition = (position + 0) % mImageIds.length; //position+1 为了是第一次为零
             Log.d(TAG, "当前位置是 ：" + currentposition);
             //添加自定义布局
-             // View v = LayoutInflater.from(mContext).inflate(R.layout.myself, null);
+            // View v = LayoutInflater.from(mContext).inflate(R.layout.myself, null);
             View v = View.inflate(MainActivity.this,
                     R.layout.myself, null);// 最后一个传了null
             /*RelativeLayout relyout = v.findViewById(R.id.relyout);
@@ -183,30 +189,25 @@ public class MainActivity extends AppCompatActivity {
             if (currentposition == 0) {
                 holder.tv_offline.setVisibility(View.GONE);
                 holder.lineonline.setVisibility(View.VISIBLE);
-                holder.tv_num.setText(position+"");
+                holder.tv_num.setText(position + "");
 
             } else {
                 holder.tv_offline.setVisibility(View.VISIBLE);
                 holder.lineonline.setVisibility(View.GONE);
             }
-             holder.img_go.setOnClickListener(new View.OnClickListener() {
+            holder.img_go.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                 Toast.makeText(MainActivity.this, "点击了", Toast.LENGTH_SHORT).show();
-                     isScoll = !isScoll;
-                     isSliding = !isSliding;
+                    Toast.makeText(MainActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+                    isScoll = !isScoll;
+                    isSliding = !isSliding;
 
                 }
             });
 
-           /* ViewGroup parent = (ViewGroup) relyout.getParent();
-            //viewpger 两个页面循环滑动会出现崩溃问题 下面是解决方案
-            if (parent != null) {
-             parent.removeAllViews();
-            }*/
-                ((ViewPager) container).addView(v);
-                return v;
-            }
+            ((ViewPager) container).addView(v);
+            return v;
+        }
 
     }
 
@@ -216,13 +217,14 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout lineonline;
         TextView tv_offline;
         TextView tv_num;
-        ImageView img_go ;
+        ImageView img_go;
+
         public Holder(View view) {
-          this.view = view;
-          relyout = view.findViewById(R.id.relyout);
-          lineonline = view.findViewById(R.id.line_onLine);//显示优惠券的布局
-           tv_offline = view.findViewById(R.id.tv_offLine);
-             tv_num = view.findViewById(R.id.tv_num);
+            this.view = view;
+            relyout = view.findViewById(R.id.relyout);
+            lineonline = view.findViewById(R.id.line_onLine);//显示优惠券的布局
+            tv_offline = view.findViewById(R.id.tv_offLine);
+            tv_num = view.findViewById(R.id.tv_num);
             img_go = view.findViewById(R.id.img_go);
         }
     }

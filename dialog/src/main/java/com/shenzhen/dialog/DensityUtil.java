@@ -1,10 +1,9 @@
-package com.shenzhen.payfor.utils;
+package com.shenzhen.dialog;
 
 import android.content.Context;
 import android.graphics.Paint;
 
 public class DensityUtil {  
-
 
 	public static int dip2px(Context context, float dpValue) {
 		final float scale = context.getResources().getDisplayMetrics().density;  

@@ -35,6 +35,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //材料设计
     implementation 'com.android.support:design:28.0.0'
+    implementation 'com.chanven.lib:cptr:1.1.0'
 }
 
 //加入的代码从这里开始

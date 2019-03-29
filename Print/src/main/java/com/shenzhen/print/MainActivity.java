@@ -8,11 +8,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.shenzhen.print.base.BaseActivity;
+
 import cn.koolcloud.engine.service.aidl.IPrinterService;
 
 public class MainActivity extends FragmentActivity {
 
     private PrinterFragment2 fragment;
+    private CheckVersionUpdate checkVersionUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,10 @@ public class MainActivity extends FragmentActivity {
 
         fragment = new PrinterFragment2();
         addLayoutFragment(R.id.frm, fragment, false);
+
+       // callBindService();
+        checkVersionUpdate = new CheckVersionUpdate(this);
+        checkVersionUpdate.callBindService();
     }
 
     public void addLayoutFragment(int layout, Fragment fragment, boolean add) {
@@ -38,6 +45,8 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SingletonPrint.unRigiest();
+        //callUnbindService();
+        SingletonPrint.unRigiest();//注销
+        checkVersionUpdate.callUnbindService();//解绑
     }
 }

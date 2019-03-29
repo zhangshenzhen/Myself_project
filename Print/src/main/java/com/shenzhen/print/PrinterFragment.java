@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 
 import com.shenzhen.print.adapter.PrinterIndexAdapter;
+import com.shenzhen.print.base.BaseFragment;
 import com.shenzhen.print.koolpos.mobiledevdemo.DeviceModel;
 import com.shenzhen.print.prin_t.PrepareReceiptInfo;
 import com.shenzhen.print.utils.AndroidUtils;

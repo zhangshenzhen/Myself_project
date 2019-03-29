@@ -20,7 +20,7 @@ public class ScrollViewApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Thread.currentThread().setUncaughtExceptionHandler(new MyexceptionHandler());
+       // Thread.currentThread().setUncaughtExceptionHandler(new MyexceptionHandler());
     }
 
 

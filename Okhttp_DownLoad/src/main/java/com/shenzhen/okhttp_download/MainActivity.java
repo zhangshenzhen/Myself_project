@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.shenzhen.okhttp_download.utils.OkHttpUtils;
 import com.shenzhen.okhttp_download.utils.ProgessListener;
 
-import org.xutils.http.HttpMethod;
+
 
 import java.io.File;
 import java.io.IOException;

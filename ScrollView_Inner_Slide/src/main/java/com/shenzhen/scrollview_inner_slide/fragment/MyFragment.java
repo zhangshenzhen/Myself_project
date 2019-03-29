@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import com.shenzhen.scrollview_inner_slide.MainActivity;
 import com.shenzhen.scrollview_inner_slide.R;
+import com.shenzhen.scrollview_inner_slide.SecondActivity;
 
 public class MyFragment extends Fragment {
-
 
     private int fp = -1;
     private View view;

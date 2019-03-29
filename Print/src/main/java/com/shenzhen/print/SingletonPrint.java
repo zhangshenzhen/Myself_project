@@ -36,7 +36,7 @@ public class SingletonPrint {
             printService = AndroidUtils.getExplicitIntent(MyApp.getAppContext(), printService);
             MyApp.getAppContext().bindService(printService, printerServiceConnection, Context.BIND_AUTO_CREATE);
         }
-
+            //绑定过程耗时 iPrinterService 可能为空
         return iPrinterService;
     }
 

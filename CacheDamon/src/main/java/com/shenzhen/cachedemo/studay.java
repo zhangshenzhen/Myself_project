@@ -30,7 +30,17 @@ public abstract class studay {
     public abstract View MyView(int position, View convertView, ViewGroup parent);
 
     public static void main() {
+    /*信息分析：
+    * 以社会用户的需求为依托，以定性定量的研究书法为手段
+    * 通过对社会信息的收集整理和分析，综合加工
+    * 形成新的增值的信息产品，最终为不同层次的科学服务
+    * 提供决策的依据的一项服务具有智能研究活动*/
 
+   /*
+   * 方法论：
+   * 是对方法进项研究的科学，具体来说，是对方法的性能 评价，
+   * 应用 开发结构体系以及规律的知识体系
+   * */
     }
 
 }

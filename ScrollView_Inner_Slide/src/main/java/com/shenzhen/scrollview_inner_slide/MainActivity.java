@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             imageView.setLayoutParams(params);
             liner_indicate.addView(imageView);
         }
-        //利用视图树观察者
+        //利用视图树观察者  计算点之间距离
         ViewTreeObserver viewTreeObserver = liner_indicate.getViewTreeObserver();
         ViewTreeListener treeListener = new ViewTreeListener(liner_indicate);
         viewTreeObserver.addOnPreDrawListener(treeListener);
