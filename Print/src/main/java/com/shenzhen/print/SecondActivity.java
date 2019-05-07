@@ -9,6 +9,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.shenzhen.print.prin_t.PrepareReceiptInfo;
 
@@ -32,6 +33,10 @@ public class SecondActivity extends Activity /*implements SingletonPrint.Change 
     }
 
     public void 打印(View view){
+        if(!SingletonPrint.initServiceSucess){
+            Toast.makeText(this, "打印机服务初始化失败", Toast.LENGTH_SHORT).show();
+            return;
+        }
         SingletonPrint.InitProgressDialog(this,2);//初始化对话框
         new Thread(new Runnable() {
             @Override

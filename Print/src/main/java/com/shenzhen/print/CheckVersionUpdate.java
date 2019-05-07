@@ -72,8 +72,7 @@ public class CheckVersionUpdate {
             handlerInit.sendEmptyMessageDelayed(1,2000);
             // 生产机预装单一应用中心，可不执行此判断(出现此情况原因：应用中心未安装或者存在两个同名Action)
             MyLog.e("请检查本机是否已安装应用中心，或者安装多个不同包名的应用中心");
-            toast.show();
-           // finish();
+
             return;
         }
         mContext.bindService(serviceIntent, connection, Context.BIND_AUTO_CREATE);

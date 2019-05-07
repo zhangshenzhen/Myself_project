@@ -27,52 +27,14 @@ public class TypleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final String TAG = "数据adapter";
     private BaseViewTypleFactory mFactory;
     private List<BaseValue> mList;
-    private List<BaseValue>  mresultDataBean;
+    private List<BaseValue>  mresultDataBean ;
     private Context mContext;
 
-    public TypleAdapter(Context context,  String result) {
+    public TypleAdapter(Context context,  List<BaseValue>  mresultDataBean) {
            this.mContext = context;
-           mFactory = new ViewTypeFactory();
-           mresultDataBean = new ArrayList<>();
-           makeData(result);
+           this.mresultDataBean = mresultDataBean;
+           mFactory = new ViewTypeFactory();  //确定条目的类型
     }
-
-    private void makeData(String result) {
-        try {
-            JSONObject jsonObject = new JSONObject(result);
-            JSONArray jsonArray = jsonObject.optJSONArray("resultData");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject object = new JSONObject(jsonArray.get(i).toString());
-                //类型 一
-                if (i % 2 == 0) {
-                    ResultDataBean dataBeans = new ResultDataBean();
-                    dataBeans.setPayamount(object.optString("payamount")+"");
-                    dataBeans.setValueamount(object.optString("valueamount")+"");
-                    dataBeans.setContent(object.optString("content")+"");
-                    dataBeans.setLabel(object.optString("label")+"");
-                    dataBeans.setCoupon_label(object.optString("coupon_label")+"");
-                    dataBeans.setCoupon_title(object.optString("coupon_title")+"");
-                    mresultDataBean.add(dataBeans);
-                    mresultDataBean.add(dataBeans);
-                } else { //类型 二
-                    ResultDataBean2 dataBeans2 = new ResultDataBean2();
-                    dataBeans2.setPayamount(object.optString("payamount")+"");
-                    dataBeans2.setValueamount(object.optString("valueamount")+"");
-                    dataBeans2.setLabel(object.optString("label"+""));
-                    dataBeans2.setCoupon_label(object.optString("coupon_label")+"");
-                    dataBeans2.setCoupon_title(object.optString("coupon_title")+"");
-                    mresultDataBean.add(dataBeans2);
-                    mresultDataBean.add(dataBeans2);
-                }
-               // Log.i(TAG, "解析.. " + dataBeans.toString());
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.i(TAG, "解析.. " + e.getMessage().toString());
-        }
-    }
-
 
    /* @NonNull
     @Override
@@ -97,7 +59,7 @@ public class TypleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     @Override
     public int getItemViewType(int position) {  //返回不同的类型
-       Log.i("ViewTypegetItemViewType", ""+mresultDataBean.get(position).getLayoutId(mFactory));
+       Log.i("ViewTypegetItemView", position+" ——- "+mresultDataBean.get(position).getLayoutId(mFactory));
         return mresultDataBean.get(position).getLayoutId(mFactory); //
     }
 

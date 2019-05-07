@@ -5,14 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Toast;
 
+import com.shenzhen.recycleview_coupousmoretyple.base.BaseValue;
 import com.shenzhen.recycleview_coupousmoretyple.bean.ResultDataBean;
 import com.shenzhen.recycleview_coupousmoretyple.bean.ResultDataBean2;
 import com.shenzhen.recycleview_coupousmoretyple.utils.DensityUtil;
 import com.shenzhen.recycleview_coupousmoretyple.utils.GridSpacingItemDecoration;
-import com.shenzhen.recycleview_coupousmoretyple.utils.HorizontalSpaceItemDecoration;
-import com.shenzhen.recycleview_coupousmoretyple.utils.RecyclerViewSpacesItemDecoration;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,13 +28,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String TAG = "优惠券数据";
-    private List mresultDataBean;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mresultDataBean = new ArrayList<>();
+
 
         recyclerView = findViewById(R.id.rcv);
         //设置间距 方式一
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-
+        Log.i(TAG, "解析.. " );
         couponsData();
     }
 
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         x.http().request(HttpMethod.POST, params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                //Toast.makeText(x.app(), result, Toast.LENGTH_LONG).show();
+                Log.i(TAG, "解析.. " + result.toString());
                 JsonData(result.toString());
             }
 
@@ -85,9 +83,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    private List<BaseValue>  mresultDataBean = new  ArrayList<>();;
     private void JsonData(String result) {
+        try {
+            JSONObject jsonObject = new JSONObject(result);
+            JSONArray jsonArray = jsonObject.optJSONArray("resultData");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject object = new JSONObject(jsonArray.get(i).toString());
+                //类型 一
+                if (i % 2 == 0) {
+                    ResultDataBean dataBeans = new ResultDataBean();
+                    dataBeans.setPayamount(object.optString("payamount")+"");
+                    dataBeans.setValueamount(object.optString("valueamount")+"");
+                    dataBeans.setContent(object.optString("content")+"");
+                    dataBeans.setLabel(object.optString("label")+"");
+                    dataBeans.setCoupon_label(object.optString("coupon_label")+"");
+                    dataBeans.setCoupon_title(object.optString("coupon_title")+"");
+                    mresultDataBean.add(dataBeans);
+                    mresultDataBean.add(dataBeans);
+                } else { //类型 二
+                    ResultDataBean2 dataBeans2 = new ResultDataBean2();
+                    dataBeans2.setPayamount(object.optString("payamount")+"");
+                    dataBeans2.setValueamount(object.optString("valueamount")+"");
+                    dataBeans2.setLabel(object.optString("label"+""));
+                    dataBeans2.setCoupon_label(object.optString("coupon_label")+"");
+                    dataBeans2.setCoupon_title(object.optString("coupon_title")+"");
+                    mresultDataBean.add(dataBeans2);
+                    mresultDataBean.add(dataBeans2);
+                }
+                // Log.i(TAG, "解析.. " + dataBeans.toString());
+            }
 
-        recyclerView.setAdapter(new TypleAdapter(this, result));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.i(TAG, "解析.. " + e.getMessage().toString());
+        }
+        recyclerView.setAdapter(new TypleAdapter(this, mresultDataBean));
     }
 }

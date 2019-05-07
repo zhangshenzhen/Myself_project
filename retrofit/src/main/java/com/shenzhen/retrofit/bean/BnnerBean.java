@@ -96,6 +96,34 @@ public class BnnerBean {
         private Object android_native_url;
         private Object app_code;
 
+        @Override
+        public String toString() {
+            return "ResultDataBean{" +
+                    "app_id=" + app_id +
+                    ", isuse=" + isuse +
+                    ", app_icon='" + app_icon + '\'' +
+                    ", country=" + country +
+                    ", last_updatetime=" + last_updatetime +
+                    ", createtime=" + createtime +
+                    ", app_type=" + app_type +
+                    ", city='" + city + '\'' +
+                    ", isentry=" + isentry +
+                    ", mtlevel=" + mtlevel +
+                    ", ios_native_url=" + ios_native_url +
+                    ", city_code='" + city_code + '\'' +
+                    ", remark=" + remark +
+                    ", link_type=" + link_type +
+                    ", app_name='" + app_name + '\'' +
+                    ", province='" + province + '\'' +
+                    ", parent_app_id=" + parent_app_id +
+                    ", native_params=" + native_params +
+                    ", sorting=" + sorting +
+                    ", link_url='" + link_url + '\'' +
+                    ", android_native_url=" + android_native_url +
+                    ", app_code=" + app_code +
+                    '}';
+        }
+
         public int getApp_id() {
             return app_id;
         }

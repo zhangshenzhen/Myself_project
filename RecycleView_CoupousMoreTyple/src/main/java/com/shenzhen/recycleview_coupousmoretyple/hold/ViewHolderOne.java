@@ -24,7 +24,9 @@ public class ViewHolderOne extends BaseViewHolder<ResultDataBean> {
     public void setUpView(Context context,final ResultDataBean modle, int position, TypleAdapter adpter) {
        final TextView tv = (TextView) getView(R.id.tv_siut_content);
        LinearLayout line_suit = (LinearLayout) getView(R.id.Line_suit);
+
         tv.setText(modle.getContent());
+
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

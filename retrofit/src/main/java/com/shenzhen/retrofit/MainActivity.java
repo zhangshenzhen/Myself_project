@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
 import com.shenzhen.retrofit.bean.BnnerBean;
 import com.shenzhen.retrofit.bean.HuiyuanbiBean;
 import com.shenzhen.retrofit.bean.YouHuiquanListBean;
@@ -26,6 +27,8 @@ import com.shenzhen.retrofit.utils.LruJsonCache;
 
 
 import org.codehaus.jackson.map.ObjectMapper;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -81,6 +84,9 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
                                     lruJsonCache = new LruJsonCache();
                                     lruJsonCache.addJsonToMemoryCache("coupon_list", json);
                                     //磁盘缓存
+                                    String Name = "RobotName";
+                                    String Num = "hs88";
+                                    String json2 = "{"+'"'+Name+'"'+":"+'"'+Num+'"'+"}";
                                     DisCacheUtils.setData(MainActivity.this, "coupon_list", json);
                                 } catch (IOException e) {
                                     e.printStackTrace();

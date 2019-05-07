@@ -27,7 +27,8 @@ public class MainActivity extends FragmentActivity {
 
        // callBindService();
         checkVersionUpdate = new CheckVersionUpdate(this);
-        checkVersionUpdate.callBindService();
+        //屏蔽更新功能
+       // checkVersionUpdate.callBindService();
     }
 
     public void addLayoutFragment(int layout, Fragment fragment, boolean add) {

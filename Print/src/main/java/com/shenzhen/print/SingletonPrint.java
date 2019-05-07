@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shenzhen.print.utils.AndroidUtils;
+import com.shenzhen.print.utils.MyLog;
 
 import cn.koolcloud.engine.service.aidl.IPrintCallback;
 import cn.koolcloud.engine.service.aidl.IPrinterService;
@@ -28,13 +29,24 @@ import cn.koolcloud.engine.service.aidlbean.IMessage;
 public class SingletonPrint {
     // 打印服务
     public static IPrinterService iPrinterService;
+    public static boolean initServiceSucess;//是否初始化成功
 
-    public static IPrinterService getiPrinterService() {
+
+    public static synchronized IPrinterService getiPrinterService() {
 
         if (iPrinterService == null) {
             Intent printService = new Intent(IPrinterService.class.getName());
             printService = AndroidUtils.getExplicitIntent(MyApp.getAppContext(), printService);
-            MyApp.getAppContext().bindService(printService, printerServiceConnection, Context.BIND_AUTO_CREATE);
+            if(printService == null){
+            initServiceSucess = false;
+             MyLog.e("打印机服务启动异常");
+             printHandler.sendEmptyMessageDelayed(initPrintNum, 3000);
+            }else {
+
+             MyApp.getAppContext().bindService(printService, printerServiceConnection, Context.BIND_AUTO_CREATE);
+             initServiceSucess = true;
+            }
+
         }
             //绑定过程耗时 iPrinterService 可能为空
         return iPrinterService;
@@ -88,7 +100,6 @@ public class SingletonPrint {
             }
         }
 
-
         @Override
         public void onServiceDisconnected(ComponentName name) {
             iPrinterService = null;
@@ -101,7 +112,7 @@ public class SingletonPrint {
     protected static final int printStart = 0;
     protected static final int printEnd = 1;
     protected static final int printError = 2;
-
+    protected static final int initPrintNum = 11;
 
     public static IPrintCallback.Stub callback = new IPrintCallback.Stub() {
         @Override
@@ -130,6 +141,9 @@ public class SingletonPrint {
 
             Log.d("handleMessage", "handleMessage msg:" + msg.what);
             switch (msg.what) {
+                case  initPrintNum:
+                    getiPrinterService();
+                    break;
                 case printStart:
                     try {
                         if (!pDialog.isShowing()) {

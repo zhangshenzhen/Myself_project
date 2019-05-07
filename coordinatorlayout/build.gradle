@@ -32,3 +32,11 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'de.hdodenhof:circleimageview:2.1.0'
 }
+apply plugin: 'img-optimizer'
+optimizerOptions {
+    triggerSize 5
+    //triggerTyple = [".jpg",".png"]
+    type "lossy"
+    suffix ""  //一定要注意suffix “” 默认改为空字符串
+               // 屏蔽会自动覆盖源文件，否则会会重新生成文件
+}

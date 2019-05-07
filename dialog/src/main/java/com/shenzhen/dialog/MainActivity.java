@@ -22,11 +22,6 @@ public class MainActivity extends Activity implements ResultDataListener {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-/**
- * 信息分来源：逻辑学、系统分析学、社会学、统计学、未来学
- *信分基本步骤：明确分析目的，分解若干要素、考察研究各要素特点、相互联系,
- * 文献
-* */
 
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override

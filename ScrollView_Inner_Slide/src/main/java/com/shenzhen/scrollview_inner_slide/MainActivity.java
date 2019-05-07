@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -378,6 +379,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         items.add(new Pair<String, Fragment>("第四个", MyFragment.getInstance(3)));
         items.add(new Pair<String, Fragment>("第五个", MyFragment.getInstance(4)));
         items.add(new Pair<String, Fragment>("第六个", MyFragment.getInstance(5)));
+        items.add(new Pair<String, Fragment>("第七个", MyFragment.getInstance(2)));
+        items.add(new Pair<String, Fragment>("第八个", MyFragment.getInstance(3)));
+        items.add(new Pair<String, Fragment>("第九个", MyFragment.getInstance(4)));
+        items.add(new Pair<String, Fragment>("第十个", MyFragment.getInstance(5)));
 
         vpager_fragment.setAdapter(new MainAdapter(this.getSupportFragmentManager()));
         tab.setupWithViewPager(vpager_fragment);

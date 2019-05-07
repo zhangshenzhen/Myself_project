@@ -44,6 +44,8 @@ public class UpLoadActivity extends AppCompatActivity {
         params.setMultipart(true);
         // params.addBodyParameter("file",new File(path));
         params.addBodyParameter("image", new File(path));
+        params.addParameter("pkregister", "360e8ac8d5604593940271bfb8848612");
+       // params.put("fileName", backUrl);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {

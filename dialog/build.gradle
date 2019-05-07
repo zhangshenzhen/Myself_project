@@ -1,9 +1,7 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'img-optimizer'
 android {
     compileSdkVersion 28
-
-
 
     defaultConfig {
         applicationId "com.shenzhen.dialog"
@@ -22,7 +20,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -36,4 +33,9 @@ dependencies {
     //implementation 'org.xutils:xutils:3.5.0'
    // implementation files('libs/xutils-3.5.0.jar')
     implementation files('libs/Xutils_NetWork-1.2.jar')
+}
+optimizerOptions {
+    triggerSize 5
+    type "lossy"
+    //suffix "_opt"  //屏蔽会自动覆盖源文件，否则会会重新生成文件
 }

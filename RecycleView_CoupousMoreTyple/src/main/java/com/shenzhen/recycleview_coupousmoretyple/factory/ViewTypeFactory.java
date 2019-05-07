@@ -21,7 +21,7 @@ public class ViewTypeFactory implements BaseViewTypleFactory {
     private final int threeId = R.layout.typle3;
 
 
-    //返回不同的类型
+    //返回不同的类型                   
     @Override
     public int typle(ResultDataBean typle) {
         return oneId; //类型
@@ -41,6 +41,5 @@ public class ViewTypeFactory implements BaseViewTypleFactory {
             mholder = new ViewHolderTwo(v);
         }
         return mholder;
-
     }
 }

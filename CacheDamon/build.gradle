@@ -37,3 +37,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+//貌似只能压缩原生png 修改的不算
+apply plugin: 'img-compressor'
+imgCompressOpt{
+    //way="pngquant"
+    test = true
+    //白文件 不进行压缩  可以自由添加图片 格式为数
+    whiteFiles=["pic3.jpg"]
+    minSize=2
+    // tinyKeys=["your key"]
+}

@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.shenzhen.print.adapter.PrinterIndexAdapter;
 import com.shenzhen.print.base.BaseFragment;
@@ -131,6 +132,10 @@ public class PrinterFragment2 extends BaseFragment implements SingletonPrint.Cha
     }
 
     public static void print() {
+        if(!SingletonPrint.initServiceSucess){
+            Toast.makeText(mgetActivity, "打印机服务初始化失败", Toast.LENGTH_SHORT).show();
+            return;
+        }
         SingletonPrint.InitProgressDialog(mgetActivity,1);//初始化对话框
         new Thread(new Runnable() {
             @Override
@@ -169,6 +174,5 @@ public class PrinterFragment2 extends BaseFragment implements SingletonPrint.Cha
     public void onChange() {
         btnTest.setEnabled(true);
         Log.d("handleMessage", "onChange:调用了监听");
-
     }
 }
