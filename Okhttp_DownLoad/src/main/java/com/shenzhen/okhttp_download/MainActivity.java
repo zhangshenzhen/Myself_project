@@ -20,7 +20,7 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Response;
-
+//  佛主保佑，永無bug
 public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity数据";
     private ProgressBar download_progress;
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         download_progress = findViewById(R.id.download_progress);
         download_text = findViewById(R.id.download_text);
           
