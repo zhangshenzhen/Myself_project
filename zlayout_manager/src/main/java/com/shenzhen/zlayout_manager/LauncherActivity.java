@@ -8,7 +8,8 @@ import android.view.View;
 
 import com.shenzhen.zlayout_manager.MainActivity;
 import com.shenzhen.zlayout_manager.R;
-
+/*
+*    测试。。*/
 
 public class LauncherActivity extends Activity {
 
