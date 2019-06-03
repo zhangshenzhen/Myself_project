@@ -2,25 +2,21 @@ package com.shenzhen.xutilsdemo;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import org.apache.http.entity.StringEntity;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xutils.common.Callback;
-import org.xutils.http.HttpMethod;
 import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+
+import cn.com.pateo.cpsp.service.R;
 
 public class UpLoadActivity extends AppCompatActivity {
 

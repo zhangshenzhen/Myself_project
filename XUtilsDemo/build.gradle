@@ -6,7 +6,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-       applicationId "com.shenzhen.xutilsdemo" //library 没有这个属性
+       applicationId "cn.com.pateo.cpsp.service" //library 没有这个属性
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

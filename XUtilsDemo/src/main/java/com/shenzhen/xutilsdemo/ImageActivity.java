@@ -8,8 +8,9 @@ import android.widget.ImageView;
 
 import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
-import org.xutils.view.annotation.ContentView;
 import org.xutils.x;
+
+import cn.com.pateo.cpsp.service.R;
 
 
 /*

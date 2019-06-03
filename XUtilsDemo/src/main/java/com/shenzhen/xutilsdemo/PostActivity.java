@@ -1,26 +1,18 @@
 package com.shenzhen.xutilsdemo;
 
-import android.net.SSLCertificateSocketFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.shenzhen.xutilsdemo.inter_face.ResultDataListener;
 import com.shenzhen.xutilsdemo.utils.PostGetData;
 
-import org.xutils.common.Callback;
-import org.xutils.http.HttpMethod;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
-
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
-import javax.net.ssl.SSLSocketFactory;
+import cn.com.pateo.cpsp.service.R;
 
 public class PostActivity extends AppCompatActivity implements ResultDataListener {
 

@@ -18,6 +18,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.com.pateo.cpsp.service.R;
+
 public class FirstActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
 
     private TextView download_text;

@@ -1,33 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
-        android:onClick="createDB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="创建数据库"/>
+        android:onClick="createDB"
+        android:text="加" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="delete"
+        android:text="删除" />
+
    <!-- <Button
-        android:onClick="createDB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:onClick="add"
+        android:text="增加" />-->
+
     <Button
-        android:onClick="createDB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="创建数据库"/>
+        android:onClick="update"
+        android:text="改" />
+
     <Button
-        android:onClick="createDB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="创建数据库"/>
+        android:onClick="query"
+        android:text="查" />
+
     <Button
-        android:onClick="createDB"
+        android:onClick="readdb"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="创建数据库"/>-->
+        android:layout_height="wrap_content" />
+    <!-- <Button
+         android:onClick="createDB"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text=""/>
+     <Button
+         android:onClick="createDB"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="创建数据库"/>
+     <Button
+         android:onClick="createDB"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="创建数据库"/>
+     <Button
+         android:onClick="createDB"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="创建数据库"/>-->
 
 </LinearLayout>
