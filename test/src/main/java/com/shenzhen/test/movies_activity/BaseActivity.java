@@ -1,4 +1,4 @@
-package com.shenzhen.test;
+package com.shenzhen.test.movies_activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -20,7 +20,7 @@ import java.util.Random;
  * time   : 2018/10/18
  * desc   : Activity 基类
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends FragmentActivity {
 
     private static final Handler HANDLER = new Handler(Looper.getMainLooper());
 

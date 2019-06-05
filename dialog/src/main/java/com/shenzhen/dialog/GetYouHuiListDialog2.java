@@ -15,15 +15,13 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
-import com.shenzhen.dialog.adapter.YouHuiDialogAdapter;
 import com.shenzhen.dialog.decoration.GridSpacingItemDecoration;
 import com.shenzhen.dialog.decoration.HorizontalSpaceItemDecoration;
 
-;
-
 import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+
+;
 
 
 public class GetYouHuiListDialog2 {
@@ -45,7 +43,7 @@ public class GetYouHuiListDialog2 {
 
          this.context = context;
          this.youHuiQuanDataBeanlist = youHuiQuanDataBeanlist;
-         width = AppInfoUtil.getScreenWidth(context);
+        width = AppInfoUtil.getScreenWidth(context);
     }
 
 

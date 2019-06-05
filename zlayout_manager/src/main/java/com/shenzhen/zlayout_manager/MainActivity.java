@@ -81,16 +81,19 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         //new String[]{"name", "lon", "lat", "pinyin", "jianpin", "pinyin_firstchar"};//要查询那些字段
         //new String[]{"lon","lat"} ;//只查询经纬度
 
-       while (cursor2.moveToNext()){
+       while (cursor2!= null &&cursor2.moveToNext()){
            String cityName = cursor2.getString(0);//城市名称
            String lon = cursor2.getString(1);//经度
            String lat = cursor2.getString(2);//维度
            String pinyin =cursor2.getString(3);//拼音
            String jianpin = cursor2.getString(4);//简拼
            String firstchar = cursor2.getString(5);//首字母；
-          System.out.println(" 测试数据库存在 城市 : "+cityName+ " , 经度 : " +lon +" , 维度 :"+ lat+" , 拼音 ："+pinyin+" , 简拼 ："+jianpin+" , 首字母 ；"+firstchar);
+          System.out.println(TAG+" 测试数据库存在 城市 : "+cityName+ " , 经度 : " +lon +" , 维度 :"+ lat+" , 拼音 ："+pinyin+" , 简拼 ："+jianpin+" , 首字母 ；"+firstchar);
         }
-        cursor2.close();
+       if (cursor2 != null){
+
+         cursor2.close();
+       }
     }
 
     //删除

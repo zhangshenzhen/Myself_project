@@ -34,4 +34,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.github.bumptech.glide:glide:3.6.1'
     implementation files('libs/volley.jar')
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+   // implementation 'org.piwik.sdk:piwik-sdk:3.0.3'
+    //材料设计
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.chanven.lib:cptr:1.1.0'
 }
