@@ -1,9 +1,14 @@
 package com.shenzhen.test.movies_activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -13,7 +18,10 @@ import com.shenzhen.test.movies_fragment.MovieFrag;
 import com.shenzhen.test.movies_fragment.MovieOrderFrg;
 import com.shenzhen.test.movies_fragment.MoviehouseFrg;
 
-public class MainActivity3 extends BaseActivity implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity3 extends BaseActivity implements ActivityCompat.OnRequestPermissionsResultCallback   {
 
     private static final String TAG = "MainActivity.class";
     private ViewPager viewpagr;
@@ -26,6 +34,11 @@ public class MainActivity3 extends BaseActivity implements View.OnClickListener 
     public MoviehouseFrg moviehouseFrg;
     public MovieOrderFrg movieOrderFrg;
     public Intent intent;
+    public String[] permissions = new String[]{
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.INTERNET};
+    private int mRequestCode = 100;
 
 
 //    @Override
@@ -62,6 +75,11 @@ public class MainActivity3 extends BaseActivity implements View.OnClickListener 
     @Override
     protected void initData() {
         initafter();
+    }
+
+    @Override
+    protected void initBindData() {
+        checkAppPermission();
     }
 
     private void initafter() {
@@ -167,6 +185,28 @@ public class MainActivity3 extends BaseActivity implements View.OnClickListener 
 
     }
 
+    private void checkAppPermission() {
+        //2、创建一个mPermissionList，逐个判断哪些权限未授予，未授予的权限存储到mPerrrmissionList中
+        List<String> mPermissionList = new ArrayList<>();
+        mPermissionList.clear();//清空没有通过的权限
+        for (int i = 0; i < permissions.length; i++) {
+            if (ContextCompat.checkSelfPermission(this, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
+                mPermissionList.add(permissions[i]);//添加还未授予的权限 } }
+            }
+        }
+
+        //申请权限
+        if (mPermissionList.size() > 0) {
+            //有权限没有通过，需要申请
+            ActivityCompat.requestPermissions(this, permissions, mRequestCode);
+        } else { //说明权限都已经通过，可以做你想做的事情去 }
+
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 
 }
 

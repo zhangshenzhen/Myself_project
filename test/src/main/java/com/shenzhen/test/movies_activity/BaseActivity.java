@@ -20,7 +20,7 @@ import java.util.Random;
  * time   : 2018/10/18
  * desc   : Activity 基类
  */
-public abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends FragmentActivity  implements View.OnClickListener {
 
     private static final Handler HANDLER = new Handler(Looper.getMainLooper());
 
@@ -38,10 +38,13 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     protected void initActivity() {
+        //先后很重要
         initLayout();
         initView();
         initData();
+        initBindData();
     }
+
 
     protected void initLayout() {
         if (getLayoutId() > 0) {
@@ -60,6 +63,9 @@ public abstract class BaseActivity extends FragmentActivity {
 
     // 初始化数据
     protected abstract void initData();
+   //绑定数据
+    protected abstract void initBindData();
+
 
     @Override
     public void finish() {

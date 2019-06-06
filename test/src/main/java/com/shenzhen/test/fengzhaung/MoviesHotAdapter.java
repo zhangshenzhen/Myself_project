@@ -59,20 +59,20 @@ public class MoviesHotAdapter extends BaseRecycleViewAdapter<MoviesHotBean> {
         }
 
 
-        liner_content.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Toast.makeText(context,data.getName(),Toast.LENGTH_SHORT).show();
-                onItemClickListner.onItemClickListner(liner_content, position);
-            }
-        });
-        liner_content.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                onItemLongClickListner.onItemLongClickListner(liner_content, position);
-                return true;//true 代表长按结束后短按的不接受，false 长按结束后短按也接受
-            }
-        });
+//        liner_content.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //Toast.makeText(context,data.getName(),Toast.LENGTH_SHORT).show();
+//                onItemClickListner.onItemClickListner(liner_content, position);
+//            }
+//        });
+//        liner_content.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View view) {
+//                onItemLongClickListner.onItemLongClickListner(liner_content, position);
+//                return true;//true 代表长按结束后短按的不接受，false 长按结束后短按也接受
+//            }
+//        });
 
         btn_buy.setOnClickListener(new View.OnClickListener() {
             @Override
