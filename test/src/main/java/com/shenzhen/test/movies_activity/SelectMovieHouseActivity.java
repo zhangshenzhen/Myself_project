@@ -1,7 +1,5 @@
 package com.shenzhen.test.movies_activity;
 
-import android.view.View;
-
 import com.shenzhen.test.R;
 
 public class SelectMovieHouseActivity extends BaseActivity {
@@ -24,16 +22,4 @@ public class SelectMovieHouseActivity extends BaseActivity {
     protected void initData() {
 
     }
-
-    @Override
-    protected void initBindData() {
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
-    }
-
-
 }

@@ -1,14 +1,10 @@
 package com.shenzhen.test.movies_fragment;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 /**
  * Created by 崔龙 on 2017/11/24.
@@ -19,12 +15,11 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
     protected View mRootView;
-    public Context context;
+
     public static final int MIN_CLICK_DELAY_TIME = 1000;
     long lastClickTime = 0;
     protected Activity mActivity; // 给子类用的
-    public   View view;
-
+     public   View view;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +27,12 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     }
 
 
-
-    /*
-    * 先执行onCreatView 后执行　onActivityCreated*/
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        context = getActivity();
-         view = inflater.inflate(initLayout(), container,false);
-        return view;
+    public void onClick(View v) {
+       onClickEvent(v);
     }
+
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -50,18 +40,10 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         mRootView = getView();
         beforeInitView();
         initView();
-        initData();
+        afterInitView();
         bindListener();
     }
 
-
-    @Override
-    public void onClick(View v) {
-        onClickEvent(v);
-    }
-    /*
-    * 加载布局*/
-     public abstract int initLayout();
 
     /**
      * 在实例化布局之前处理的逻辑
@@ -76,7 +58,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     /**
      * 在实例化之后处理的逻辑
      */
-    public abstract void initData();
+    public abstract void afterInitView();
 
     /**
      * 绑定监听事件
