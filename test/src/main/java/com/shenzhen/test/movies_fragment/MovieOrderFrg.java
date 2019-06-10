@@ -1,34 +1,51 @@
 package com.shenzhen.test.movies_fragment;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.shenzhen.test.R;
 
-public  class MovieOrderFrg extends Fragment {
+public class MovieOrderFrg extends BaseFragment {
 
-    private Context context;
-    private View view;
+//    @Nullable
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        context = getActivity();
+//        view = inflater.inflate(R.layout.fragment_movie_order, container, false);
+//
+//        return view;
+//    }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        context = getActivity();
-        view = inflater.inflate(R.layout.fragment_movie_order, container, false);
-        // ButterKnife.bind(this, view);
-        initview(view);
-        return view;
+    public int initLayout() {
+        return R.layout.fragment_movie_order;
     }
 
-    private void initview(View view) {
 
-        TextView tv_typle =view.findViewById(R.id.tv_typle);
+    @Override
+    public void beforeInitView() {
+    }
+
+    @Override
+    public void initView() {
+
+        TextView tv_typle = view.findViewById(R.id.tv_typle);
         tv_typle.setText("电影订单");
+
     }
- }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void bindListener() {
+
+    }
+
+    @Override
+    public void onClickEvent(View v) {
+
+    }
+}

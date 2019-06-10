@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rel_title"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center_vertical">
@@ -34,6 +35,7 @@
 
 
         <TextView
+            android:id="@+id/tv_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -48,6 +50,8 @@
     </RelativeLayout>
 
     <LinearLayout
+
+        android:id="@+id/liner_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -55,9 +59,43 @@
         android:paddingBottom="1dp">
 
         <android.support.v4.view.ViewPager
+            android:layout_marginLeft="5dp"
             android:id="@+id/vpager_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--网络异常的时候显示斜面的布局-->
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/lin_error"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_height="match_parent">
+
+        <TextView
+           android:textSize="16sp"
+           android:textColor="#333333"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+            android:text="网络异常，请稍后再试"
+            />
+
+        <TextView
+            android:id="@+id/tv_error_remind"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击重试"
+            android:padding="5dp"
+            android:background="@drawable/again_bg_shape"
+            />
+
     </LinearLayout>
 
 
