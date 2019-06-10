@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <include layout="@layout/left_bar_desc" />
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:paddingLeft="5dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:descendantFocusability="blocksDescendants"
+            android:fillViewport="true"
+            android:scrollbars="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="30dp"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -31,6 +37,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="电影详情"
+                        android:textColor="#555555"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -38,19 +45,143 @@
                 <!--影片介绍-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
+
+                    <!--点击播放videview-->
                     <ImageView
-                        android:layout_width="152dp"
-                        android:layout_height="300dp"
-                        android:layout_marginTop="0dp"
+                        android:id="@+id/img_video"
+                        android:layout_width="160dp"
+                        android:layout_height="200dp"
+                        android:scaleType="fitXY"
                         android:src="@mipmap/haibao" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp">
+                        <!--影片名称-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="拯救地球"
+                            android:textColor="#333333"
+                            android:textSize="18sp" />
 
+                        <!--评分-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="评分: "
+                                android:textColor="#999999"
+                                android:textSize="14dp" />
+
+                            <TextView
+                                android:id="@+id/tv_pingfen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="9.2"
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_show_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2019-06-16大陆上映|106分钟"
+                            android:textColor="#999999"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="简介"
+                            android:textColor="#333333"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_jianjie"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:maxLines="5"
+                            android:text="@string/desc"
+                            android:textColor="#333333"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
-                <!--更多内容-->
 
+                <!--更多内容-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_direct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="导演$主演"
+                        android:textColor="#222222"
+                        android:textSize="16sp" />
+
+                   <TextView
+                       android:layout_alignParentRight="true"
+                       android:layout_marginTop="20dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="查看全部>"/>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recy_direct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="剧照"
+                        android:textColor="#222222"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看全部>"/>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recy_stage_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
 
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
@@ -59,10 +190,10 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:text="特惠购票"
         android:textSize="18sp" />
 
-</RelativeLayout>
+</LinearLayout>

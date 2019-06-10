@@ -2,15 +2,10 @@ package com.shenzhen.test.movies_fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.shenzhen.test.R;
@@ -37,12 +32,17 @@ public class HotShowFragment extends BaseFragment implements BaseRecycleViewAdap
         return fragment;
     }
 
-    @Nullable
+//    @Nullable
+//    @Override
+//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//        context = getActivity();
+//        view = inflater.inflate(R.layout.fragment_movie_hot,  container, false);
+//        return view;
+//    }
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        context = getActivity();
-        view = inflater.inflate(R.layout.fragment_movie_hot, container, false);
-        return view;
+    public int initLayout() {
+        return R.layout.fragment_movie_hot;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class HotShowFragment extends BaseFragment implements BaseRecycleViewAdap
     }
 
     @Override
-    public void afterInitView() {
+    public void initData() {
 
     }
 
@@ -80,7 +80,7 @@ public class HotShowFragment extends BaseFragment implements BaseRecycleViewAdap
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL);
         //设置布局管理器
         //设置间距 方式一
-        GridSpacingItemDecoration gridSpacingItemDecoration = new GridSpacingItemDecoration(1, DensityUtil.dip2px(getActivity(), 5));//5
+        GridSpacingItemDecoration gridSpacingItemDecoration = new GridSpacingItemDecoration(1, DensityUtil.dip2px(getActivity(), 10));//5
         recy.addItemDecoration(gridSpacingItemDecoration);
 
         recy.setLayoutManager(manager);

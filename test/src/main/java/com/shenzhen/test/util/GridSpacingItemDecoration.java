@@ -18,13 +18,13 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         int position = parent.getChildAdapterPosition(view); // item position
         int column = position % spanCount; // item column
-
+      //position 第一个0  左边不需要间隔
         if(column == 0){
             outRect.top = spacing;
-            outRect.left = spacing;
             outRect.right = spacing;
             outRect.bottom = spacing;
         }else{
+            outRect.left = spacing;
             outRect.top = spacing;
             outRect.right = spacing;
             outRect.bottom = spacing;
