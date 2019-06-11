@@ -35,15 +35,7 @@ public class MovieFrag extends BaseFragment {
     public boolean errorAgin = false;
     public TextView tv_search;
 
-//    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        context = getActivity();
-//        view = inflater.inflate(R.layout.fragment_movie2, container, false);
-//       // ButterKnife.bind(this, view);
-//       // initview(view);
-//        return view;
-//    }
+
 
     @Override
     public int initLayout() {
