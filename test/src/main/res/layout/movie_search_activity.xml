@@ -52,19 +52,19 @@
                 android:text="历史搜索"
                 android:textSize="12sp" />
             <!--历史记录-->
-            <LinearLayout
+            <!--<RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical">-->
 
                 <android.support.v7.widget.RecyclerView
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="3dp"
                     android:id="@+id/rcy_flow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="0dp" />
 
-            </LinearLayout>
+           <!-- </RelativeLayout>-->
 
 
         </LinearLayout>

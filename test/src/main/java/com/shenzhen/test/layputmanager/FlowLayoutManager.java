@@ -109,6 +109,7 @@ public class FlowLayoutManager extends RecyclerView.LayoutManager {
             //detachAndScrapAttachedViews(recycler);
         }
 
+
         int leftOffset = getPaddingLeft();
         int lineMaxHeight = 0;
         //布局子View阶段
