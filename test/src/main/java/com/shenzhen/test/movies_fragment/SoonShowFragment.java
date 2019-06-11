@@ -7,7 +7,6 @@ import com.shenzhen.test.R;
 public class SoonShowFragment extends BaseFragment {
 
 
-
     @Override
     public int initLayout() {
         return R.layout.fragment_movie_soon;
