@@ -7,14 +7,7 @@ import com.shenzhen.test.R;
 
 public class MovieOrderFrg extends BaseFragment {
 
-//    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        context = getActivity();
-//        view = inflater.inflate(R.layout.fragment_movie_order, container, false);
-//
-//        return view;
-//    }
+
 
     @Override
     public int initLayout() {

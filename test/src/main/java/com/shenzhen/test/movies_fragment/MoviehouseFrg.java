@@ -8,14 +8,7 @@ import com.shenzhen.test.R;
 public  class MoviehouseFrg extends BaseFragment {
 
 
-//    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        context = getActivity();
-//        view = inflater.inflate(R.layout.fragment_movie_house, container, false);
-//
-//        return view;
-//    }
+
 
     @Override
     public int initLayout() {
