@@ -8,8 +8,6 @@ import com.shenzhen.test.R;
 public  class MoviehouseFrg extends BaseFragment {
 
 
-
-
     @Override
     public int initLayout() {
         return R.layout.fragment_movie_house;
