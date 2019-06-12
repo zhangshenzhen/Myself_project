@@ -8,6 +8,7 @@ import com.shenzhen.test.R;
 public class MovieOrderFrg extends BaseFragment {
 
 
+
     @Override
     public int initLayout() {
         return R.layout.fragment_movie_order;
