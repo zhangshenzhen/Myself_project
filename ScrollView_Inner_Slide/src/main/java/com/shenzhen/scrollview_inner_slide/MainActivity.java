@@ -3,6 +3,7 @@ package com.shenzhen.scrollview_inner_slide;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -12,15 +13,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -31,16 +28,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
-import android.widget.AbsListView;
 import android.widget.GridView;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,10 +44,8 @@ import com.shenzhen.scrollview_inner_slide.adapter.InnGridViewAdapter;
 import com.shenzhen.scrollview_inner_slide.adapter.ListTestAdapter;
 import com.shenzhen.scrollview_inner_slide.fragment.MyFragment;
 import com.shenzhen.scrollview_inner_slide.holder.CustomSwipeRefreshLayout;
-import com.shenzhen.scrollview_inner_slide.utils.AppInfoUtil;
 import com.shenzhen.scrollview_inner_slide.utils.DensityUtil;
 import com.shenzhen.scrollview_inner_slide.utils.HotFix;
-import com.shenzhen.scrollview_inner_slide.view.FixedSpeedScroller;
 import com.shenzhen.scrollview_inner_slide.view.TestCaculate;
 import com.shenzhen.scrollview_inner_slide.view.TestbBug;
 
@@ -149,7 +140,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
     /*//使用了热修复
       //https://blog.csdn.net/hq942845204/article/details/81044158
     * */

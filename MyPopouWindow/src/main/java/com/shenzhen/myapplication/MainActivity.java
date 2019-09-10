@@ -3,8 +3,10 @@ package com.shenzhen.myapplication;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.AbsoluteSizeSpan;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -95,10 +97,19 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 onDismiss();
             }
         });
+        TextView tv_text = contentView.findViewById(R.id.tv_text);
+
+        SpannableString sps = new SpannableString("￥"+"170.00");
+        sps.setSpan(new AbsoluteSizeSpan(30), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        sps.setSpan(new AbsoluteSizeSpan(50), 1, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        sps.setSpan(new AbsoluteSizeSpan(30), 4,7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tv_text.setText(sps);
+
         //这里从新设置了popupWindow的width和heigth,就会以此处为标准
         PopupWindow popupWindow = new PopupWindow(contentView,
         ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
         popupWindow.setTouchable(true);
+        popupWindow.setAnimationStyle(R.style.anim_popup);
         popupWindow.setTouchInterceptor(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+            dirs '../../../OUT_APP/lib/'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation files('../../../OUT_APP/lib/CpspMgr-release.jar')
+}
+
+//加入的代码从这里开始
+////加入的代码从这里开始
+task clearJar(type: Delete) {
+   delete('libs/Xutils_NetWork-1.0.jar')
+}
+
+task makeJar(type: org.gradle.api.tasks.bundling.Jar) {
+
+
+    //指定生成的jar名称
+    baseName 'Location_Mgr-1.0'
+    //从哪里打包class文件
+    from('build/intermediates/classes/debug/cn/com/pateo/cpsc/location/manager/')
+    //打包到jar后的目录结构
+    into('cn/com/pateo/cpsc/location/manager/')
+    //去掉不需要打包的目录和文件
+    exclude('text/', 'BuildConfig.class', 'R.class', 'BuildConfig.class')
+    exclude {
+        it.name.startsWith('R$');
+    }
+}
+makeJar.dependsOn(clearJar, build)

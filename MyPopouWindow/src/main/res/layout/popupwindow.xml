@@ -6,10 +6,11 @@
     android:background="#ffffff"
     >
     <TextView
+        android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="单个popupwindow"
-        android:textSize="30dp"
+        android:textStyle="italic"
         android:layout_gravity="center_horizontal"
         />
     <Button
